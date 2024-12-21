@@ -5,15 +5,18 @@ body {
     padding: 0;
     line-height: 1.6;
 }
+
 header {
     background: #333;
     color: #fff;
     padding: 10px 20px;
     text-align: center;
 }
+
 nav {
     margin-top: 10px;
 }
+
 nav button {
     background: #444;
     color: #fff;
@@ -23,18 +26,89 @@ nav button {
     margin: 0 5px;
     border-radius: 5px;
 }
+
 nav button:hover {
     background: #555;
 }
+
+nav button.active {
+    background: #666;
+}
+
+/* Tab Content Styles */
 .tab-content {
     display: none;
     padding: 20px;
 }
+
 .tab-content.active {
     display: block;
 }
-.project {
-    border: 1px solid #ddd;
-    padding: 10px;
-    margin: 10px 0;
+
+/* Project Cards Styling */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 20px;
+}
+
+.project-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.project-thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-content {
+    padding: 1.5rem;
+}
+
+.project-content h3 {
+    margin: 0 0 1rem 0;
+    color: #333;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.tag {
+    background: #f0f0f0;
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.875rem;
+    color: #666;
+}
+
+.project-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.project-link {
+    text-decoration: none;
+    color: #0066cc;
+    font-weight: 500;
 }
