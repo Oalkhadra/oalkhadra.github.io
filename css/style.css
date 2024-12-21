@@ -38,11 +38,19 @@ nav button.active {
 /* Tab Content Styles */
 .tab-content {
     display: none;
-    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 .tab-content.active {
     display: block;
+    opacity: 1;
+}
+
+/* Active button state */
+.tab-button.active {
+    background-color: #666 !important;
+    font-weight: bold;
 }
 
 /* Project Cards Styling */
