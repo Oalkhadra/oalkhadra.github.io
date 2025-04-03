@@ -117,41 +117,6 @@
             font-size: 1.1rem;
         }
         
-        .stats-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-            margin: 2.5rem 0;
-        }
-        
-        .stat-box {
-            background-color: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: var(--card-shadow);
-            flex: 1;
-            min-width: 200px;
-            text-align: center;
-            transition: var(--transition);
-        }
-        
-        .stat-box:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .stat-number {
-            font-size: 3rem;
-            font-weight: bold;
-            color: var(--secondary-color);
-            margin-bottom: 0.5rem;
-        }
-        
-        .stat-label {
-            font-size: 1.1rem;
-            color: #666;
-        }
-        
         .skills-section {
             margin: 3rem 0;
         }
@@ -241,10 +206,6 @@
             box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
         }
         
-        .language-flag {
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-        }
         
         .language-name {
             font-weight: 600;
@@ -278,9 +239,6 @@
                 grid-template-columns: 1fr;
             }
             
-            .stat-box, .language-item {
-                min-width: 100%;
-            }
         }
         
         @media (max-width: 480px) {
@@ -292,9 +250,6 @@
                 font-size: 1.5rem;
             }
             
-            .stat-number {
-                font-size: 2.5rem;
-            }
         }
     </style>
 </head>
@@ -324,25 +279,6 @@
             <p>Currently pursuing an M.S. in Applied Data Science at USC with a 4.0 GPA, I combine rigorous technical skills with industry experience in risk analytics and machine learning model development. My research background spans decision support tools for environmental impact assessment and large-scale recommendation systems, demonstrating my ability to tackle complex data challenges.</p>
             
             <p>I'm passionate about leveraging advanced ML techniques, distributed computing, and spatial data optimization to drive strategic decision-making. Seeking opportunities to collaborate with forward-thinking teams at the intersection of AI, risk analytics, and sustainable solutions.</p>
-        </div>
-        
-        <div class="stats-container">
-            <div class="stat-box">
-                <div class="stat-number">4.0</div>
-                <div class="stat-label">USC GPA</div>
-            </div>
-            <div class="stat-box">
-                <div class="stat-number">96%</div>
-                <div class="stat-label">ML Model Accuracy</div>
-            </div>
-            <div class="stat-box">
-                <div class="stat-number">7M+</div>
-                <div class="stat-label">Records Processed</div>
-            </div>
-            <div class="stat-box">
-                <div class="stat-number">3</div>
-                <div class="stat-label">Languages</div>
-            </div>
         </div>
         
         <div class="skills-section">
@@ -492,19 +428,16 @@
             
             <div class="languages-container">
                 <div class="language-item">
-                    <div class="language-flag">🇺🇸</div>
                     <div class="language-name">English</div>
                     <div class="language-level">Fluent</div>
                 </div>
                 
                 <div class="language-item">
-                    <div class="language-flag">🇦🇪</div>
                     <div class="language-name">Arabic</div>
                     <div class="language-level">Fluent</div>
                 </div>
                 
                 <div class="language-item">
-                    <div class="language-flag">🇫🇷</div>
                     <div class="language-name">French</div>
                     <div class="language-level">Intermediate</div>
                 </div>
