@@ -554,60 +554,248 @@
                     </div>
                 </div>
                 
-                <!-- Education Section -->
+                <!-- Enhanced Education Section -->
                 <h3 class="section-title" style="font-size: 1.6rem; margin-top: 3rem;">Education</h3>
                 <div class="education-container" style="display: flex; flex-wrap: wrap; gap: 1.5rem; margin-top: 1.5rem;">
-                    <div class="education-card" style="background-color: white; border-radius: 8px; box-shadow: var(--card-shadow); padding: 1.5rem; flex: 1; min-width: 300px; transition: var(--transition);">
-                        <div class="education-date" style="font-weight: bold; color: var(--secondary-color);">2023 - 2025</div>
-                        <div class="education-degree" style="font-size: 1.2rem; font-weight: 600; color: var(--primary-color); margin: 0.5rem 0;">M.S. Applied Data Science</div>
-                        <div class="education-school" style="font-size: 1rem; font-weight: 500; color: #666;">University of Southern California</div>
-                        <div class="education-details" style="margin-top: 0.8rem; color: #666;">
-                            <p><strong>GPA:</strong> 4.0</p>
-                            <p><strong>Relevant Coursework:</strong> Machine Learning, Data Mining, Geospatial Information Management, Data Management, Database Systems, Security and Privacy</p>
+                    <div class="education-card" style="background-color: white; border-radius: 8px; box-shadow: var(--card-shadow); padding: 1.5rem; flex: 1; min-width: 300px; transition: var(--transition); display: flex; align-items: center;">
+                        <div class="education-logo" style="width: 80px; height: 80px; margin-right: 1.5rem; display: flex; justify-content: center; align-items: center; background-color: #f5f5f5; border-radius: 50%; overflow: hidden; flex-shrink: 0;">
+                            <img src="images/usc.png" alt="USC Logo" style="max-width: 100%; max-height: 75%; object-fit: contain;" />
+                        </div>
+                        <div class="education-info" style="flex-grow: 1;">
+                            <div class="education-date" style="font-weight: bold; color: var(--secondary-color);">2023 - 2025</div>
+                            <div class="education-degree" style="font-size: 1.2rem; font-weight: 600; color: var(--primary-color); margin: 0.5rem 0;">M.S. Applied Data Science</div>
+                            <div class="education-school" style="font-size: 1rem; font-weight: 500; color: #666;">University of Southern California</div>
+                            <div class="education-details" style="margin-top: 0.8rem; color: #666;">
+                                <p><strong>GPA:</strong> 4.0</p>
+                                <p><strong>Relevant Coursework:</strong> Machine Learning, Data Mining, Geospatial Information Management, Data Management, Database Systems, Security and Privacy</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="education-card" style="background-color: white; border-radius: 8px; box-shadow: var(--card-shadow); padding: 1.5rem; flex: 1; min-width: 300px; transition: var(--transition);">
-                        <div class="education-date" style="font-weight: bold; color: var(--secondary-color);">2019 - 2023</div>
-                        <div class="education-degree" style="font-size: 1.2rem; font-weight: 600; color: var(--primary-color); margin: 0.5rem 0;">B.S. Systems Engineering</div>
-                        <div class="education-school" style="font-size: 1rem; font-weight: 500; color: #666;">George Washington University</div>
-                        <div class="education-details" style="margin-top: 0.8rem; color: #666;">
-                            <p><strong>GPA:</strong> 3.7</p>
-                            <p><strong>Honors:</strong> Magna Cum Laude, Dean's List</p>
+                    <div class="education-card" style="background-color: white; border-radius: 8px; box-shadow: var(--card-shadow); padding: 1.5rem; flex: 1; min-width: 300px; transition: var(--transition); display: flex; align-items: center;">
+                        <div class="education-logo" style="width: 80px; height: 80px; margin-right: 1.5rem; display: flex; justify-content: center; align-items: center; background-color: #f5f5f5; border-radius: 50%; overflow: hidden; flex-shrink: 0;">
+                            <img src="images/gwu.png" alt="GWU Logo" style="max-width: 100%; max-height: 75%; object-fit: contain;" />
+                        </div>
+                        <div class="education-info" style="flex-grow: 1;">
+                            <div class="education-date" style="font-weight: bold; color: var(--secondary-color);">2019 - 2023</div>
+                            <div class="education-degree" style="font-size: 1.2rem; font-weight: 600; color: var(--primary-color); margin: 0.5rem 0;">B.S. Systems Engineering</div>
+                            <div class="education-school" style="font-size: 1rem; font-weight: 500; color: #666;">George Washington University</div>
+                            <div class="education-details" style="margin-top: 0.8rem; color: #666;">
+                                <p><strong>GPA:</strong> 3.7</p>
+                                <p><strong>Honors:</strong> Magna Cum Laude, Dean's List</p>
+                            </div>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Skills Section -->
-                <h3 class="section-title" style="font-size: 1.6rem; margin-top: 3rem;">Skills</h3>
+                <!-- Languages Section (Separated) -->
+                <h3 class="section-title" style="font-size: 1.6rem; margin-top: 3rem;">Languages</h3>
+                <div class="languages-container" style="margin-top: 1.5rem; background-color: white; border-radius: 8px; box-shadow: var(--card-shadow); padding: 1.5rem; transition: var(--transition);">
+                    <div class="language-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 2rem;">
+                        <div class="language-item">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                <span style="font-weight: 600; color: var(--primary-color); font-size: 1.1rem;">English</span>
+                                <span style="color: var(--secondary-color); font-weight: 500;">Native</span>
+                            </div>
+                            <div class="language-progress" style="height: 8px; background-color: #eaeaea; border-radius: 4px;">
+                                <div style="height: 100%; width: 100%; background-color: var(--secondary-color); border-radius: 4px;"></div>
+                            </div>
+                        </div>
+                        <div class="language-item">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                <span style="font-weight: 600; color: var(--primary-color); font-size: 1.1rem;">Arabic</span>
+                                <span style="color: var(--secondary-color); font-weight: 500;">Native</span>
+                            </div>
+                            <div class="language-progress" style="height: 8px; background-color: #eaeaea; border-radius: 4px;">
+                                <div style="height: 100%; width: 100%; background-color: var(--secondary-color); border-radius: 4px;"></div>
+                            </div>
+                        </div>
+                        <div class="language-item">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                <span style="font-weight: 600; color: var(--primary-color); font-size: 1.1rem;">French</span>
+                                <span style="color: var(--secondary-color); font-weight: 500;">Intermediate</span>
+                            </div>
+                            <div class="language-progress" style="height: 8px; background-color: #eaeaea; border-radius: 4px;">
+                                <div style="height: 100%; width: 60%; background-color: var(--secondary-color); border-radius: 4px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Enhanced Skills Section with Progress Bars -->
+                <h3 class="section-title" style="font-size: 1.6rem; margin-top: 3rem;">Technical Skills</h3>
                 <div class="skills-container" style="margin-top: 1.5rem;">
-                    <div class="skill-category" style="margin-bottom: 1.5rem;">
-                        <h4 style="font-size: 1.1rem; color: var(--primary-color); margin-bottom: 0.8rem;">Technical Skills</h4>
-                        <div class="skill-tags" style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
-                            <span class="tag" style="background-color: rgba(52, 152, 219, 0.1); color: var(--secondary-color); padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.9rem; transition: var(--transition);">Python</span>
-                            <span class="tag" style="background-color: rgba(52, 152, 219, 0.1); color: var(--secondary-color); padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.9rem; transition: var(--transition);">R</span>
-                            <span class="tag" style="background-color: rgba(52, 152, 219, 0.1); color: var(--secondary-color); padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.9rem; transition: var(--transition);">SQL</span>
-                            <span class="tag" style="background-color: rgba(52, 152, 219, 0.1); color: var(--secondary-color); padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.9rem; transition: var(--transition);">Azure</span>
-                            <span class="tag" style="background-color: rgba(52, 152, 219, 0.1); color: var(--secondary-color); padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.9rem; transition: var(--transition);">Git</span>
-                            <span class="tag" style="background-color: rgba(52, 152, 219, 0.1); color: var(--secondary-color); padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.9rem; transition: var(--transition);">Docker</span>
+                    <div class="skill-category" style="margin-bottom: 2rem; background-color: white; border-radius: 8px; box-shadow: var(--card-shadow); padding: 1.5rem; transition: var(--transition);">
+                        <h4 style="font-size: 1.1rem; color: var(--primary-color); margin-bottom: 1rem; border-bottom: 2px solid var(--secondary-color); padding-bottom: 0.5rem; display: inline-block;">Programming & Tools</h4>
+                        <div class="skill-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 1rem;">
+                            <!-- Fluent Skills (100%) -->
+                            <div class="skill-item">
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                    <span style="font-weight: 600; color: var(--primary-color);">Python</span>
+                                    <span style="color: var(--secondary-color); font-weight: 500;">Fluent</span>
+                                </div>
+                                <div class="skill-progress" style="height: 8px; background-color: #eaeaea; border-radius: 4px;">
+                                    <div style="height: 100%; width: 100%; background-color: var(--secondary-color); border-radius: 4px;"></div>
+                                </div>
+                            </div>
+                            
+                            <!-- Proficient Skills (80%) -->
+                            <div class="skill-item">
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                    <span style="font-weight: 600; color: var(--primary-color);">R</span>
+                                    <span style="color: var(--secondary-color); font-weight: 500;">Proficient</span>
+                                </div>
+                                <div class="skill-progress" style="height: 8px; background-color: #eaeaea; border-radius: 4px;">
+                                    <div style="height: 100%; width: 80%; background-color: var(--secondary-color); border-radius: 4px;"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                    <span style="font-weight: 600; color: var(--primary-color);">SQL</span>
+                                    <span style="color: var(--secondary-color); font-weight: 500;">Proficient</span>
+                                </div>
+                                <div class="skill-progress" style="height: 8px; background-color: #eaeaea; border-radius: 4px;">
+                                    <div style="height: 100%; width: 80%; background-color: var(--secondary-color); border-radius: 4px;"></div>
+                                </div>
+                            </div>
+                            
+                            <!-- Experienced Skills (70%) -->
+                            <div class="skill-item">
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                    <span style="font-weight: 600; color: var(--primary-color);">Azure</span>
+                                    <span style="color: var(--secondary-color); font-weight: 500;">Experienced</span>
+                                </div>
+                                <div class="skill-progress" style="height: 8px; background-color: #eaeaea; border-radius: 4px;">
+                                    <div style="height: 100%; width: 70%; background-color: var(--secondary-color); border-radius: 4px;"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                    <span style="font-weight: 600; color: var(--primary-color);">Git</span>
+                                    <span style="color: var(--secondary-color); font-weight: 500;">Experienced</span>
+                                </div>
+                                <div class="skill-progress" style="height: 8px; background-color: #eaeaea; border-radius: 4px;">
+                                    <div style="height: 100%; width: 70%; background-color: var(--secondary-color); border-radius: 4px;"></div>
+                                </div>
+                            </div>
+                            
+                            <!-- Skilled Skills (60%) -->
+                            <div class="skill-item">
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                    <span style="font-weight: 600; color: var(--primary-color);">Docker</span>
+                                    <span style="color: var(--secondary-color); font-weight: 500;">Skilled</span>
+                                </div>
+                                <div class="skill-progress" style="height: 8px; background-color: #eaeaea; border-radius: 4px;">
+                                    <div style="height: 100%; width: 60%; background-color: var(--secondary-color); border-radius: 4px;"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="skill-category" style="margin-bottom: 1.5rem;">
-                        <h4 style="font-size: 1.1rem; color: var(--primary-color); margin-bottom: 0.8rem;">Machine Learning</h4>
-                        <div class="skill-tags" style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
-                            <span class="tag" style="background-color: rgba(52, 152, 219, 0.1); color: var(--secondary-color); padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.9rem; transition: var(--transition);">Scikit-learn</span>
-                            <span class="tag" style="background-color: rgba(52, 152, 219, 0.1); color: var(--secondary-color); padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.9rem; transition: var(--transition);">XGBoost</span>
-                            <span class="tag" style="background-color: rgba(52, 152, 219, 0.1); color: var(--secondary-color); padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.9rem; transition: var(--transition);">PyTorch</span>
-                            <span class="tag" style="background-color: rgba(52, 152, 219, 0.1); color: var(--secondary-color); padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.9rem; transition: var(--transition);">TensorFlow</span>
+                    
+                    <div class="skill-category" style="margin-bottom: 2rem; background-color: white; border-radius: 8px; box-shadow: var(--card-shadow); padding: 1.5rem; transition: var(--transition);">
+                        <h4 style="font-size: 1.1rem; color: var(--primary-color); margin-bottom: 1rem; border-bottom: 2px solid var(--secondary-color); padding-bottom: 0.5rem; display: inline-block;">Machine Learning & AI</h4>
+                        <div class="skill-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 1rem;">
+                            <!-- Fluent Skills (100%) -->
+                            <div class="skill-item">
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                    <span style="font-weight: 600; color: var(--primary-color);">Scikit-learn</span>
+                                    <span style="color: var(--secondary-color); font-weight: 500;">Fluent</span>
+                                </div>
+                                <div class="skill-progress" style="height: 8px; background-color: #eaeaea; border-radius: 4px;">
+                                    <div style="height: 100%; width: 100%; background-color: var(--secondary-color); border-radius: 4px;"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                    <span style="font-weight: 600; color: var(--primary-color);">XGBoost</span>
+                                    <span style="color: var(--secondary-color); font-weight: 500;">Fluent</span>
+                                </div>
+                                <div class="skill-progress" style="height: 8px; background-color: #eaeaea; border-radius: 4px;">
+                                    <div style="height: 100%; width: 100%; background-color: var(--secondary-color); border-radius: 4px;"></div>
+                                </div>
+                            </div>
+                            
+                            <!-- Skilled Skills (60%) -->
+                            <div class="skill-item">
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                    <span style="font-weight: 600; color: var(--primary-color);">PyTorch</span>
+                                    <span style="color: var(--secondary-color); font-weight: 500;">Skilled</span>
+                                </div>
+                                <div class="skill-progress" style="height: 8px; background-color: #eaeaea; border-radius: 4px;">
+                                    <div style="height: 100%; width: 60%; background-color: var(--secondary-color); border-radius: 4px;"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                    <span style="font-weight: 600; color: var(--primary-color);">TensorFlow</span>
+                                    <span style="color: var(--secondary-color); font-weight: 500;">Skilled</span>
+                                </div>
+                                <div class="skill-progress" style="height: 8px; background-color: #eaeaea; border-radius: 4px;">
+                                    <div style="height: 100%; width: 60%; background-color: var(--secondary-color); border-radius: 4px;"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="skill-category" style="margin-bottom: 1.5rem;">
-                        <h4 style="font-size: 1.1rem; color: var(--primary-color); margin-bottom: 0.8rem;">Data Engineering</h4>
-                        <div class="skill-tags" style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
-                            <span class="tag" style="background-color: rgba(52, 152, 219, 0.1); color: var(--secondary-color); padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.9rem; transition: var(--transition);">Apache Spark</span>
-                            <span class="tag" style="background-color: rgba(52, 152, 219, 0.1); color: var(--secondary-color); padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.9rem; transition: var(--transition);">Hadoop</span>
-                            <span class="tag" style="background-color: rgba(52, 152, 219, 0.1); color: var(--secondary-color); padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.9rem; transition: var(--transition);">ETL</span>
-                            <span class="tag" style="background-color: rgba(52, 152, 219, 0.1); color: var(--secondary-color); padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.9rem; transition: var(--transition);">Relational Databases</span>
-                            <span class="tag" style="background-color: rgba(52, 152, 219, 0.1); color: var(--secondary-color); padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.9rem; transition: var(--transition);">NoSQL</span>
+                    
+                    <div class="skill-category" style="margin-bottom: 2rem; background-color: white; border-radius: 8px; box-shadow: var(--card-shadow); padding: 1.5rem; transition: var(--transition);">
+                        <h4 style="font-size: 1.1rem; color: var(--primary-color); margin-bottom: 1rem; border-bottom: 2px solid var(--secondary-color); padding-bottom: 0.5rem; display: inline-block;">Data Engineering & Infrastructure</h4>
+                        <div class="skill-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 1rem;">
+                            <!-- Fluent Skills (100%) -->
+                            <div class="skill-item">
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                    <span style="font-weight: 600; color: var(--primary-color);">Apache Spark</span>
+                                    <span style="color: var(--secondary-color); font-weight: 500;">Fluent</span>
+                                </div>
+                                <div class="skill-progress" style="height: 8px; background-color: #eaeaea; border-radius: 4px;">
+                                    <div style="height: 100%; width: 100%; background-color: var(--secondary-color); border-radius: 4px;"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                    <span style="font-weight: 600; color: var(--primary-color);">SQL Databases</span>
+                                    <span style="color: var(--secondary-color); font-weight: 500;">Fluent</span>
+                                </div>
+                                <div class="skill-progress" style="height: 8px; background-color: #eaeaea; border-radius: 4px;">
+                                    <div style="height: 100%; width: 100%; background-color: var(--secondary-color); border-radius: 4px;"></div>
+                                </div>
+                            </div>
+                            
+                            <!-- Proficient Skills (80%) -->
+                            <div class="skill-item">
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                    <span style="font-weight: 600; color: var(--primary-color);">ETL</span>
+                                    <span style="color: var(--secondary-color); font-weight: 500;">Proficient</span>
+                                </div>
+                                <div class="skill-progress" style="height: 8px; background-color: #eaeaea; border-radius: 4px;">
+                                    <div style="height: 100%; width: 80%; background-color: var(--secondary-color); border-radius: 4px;"></div>
+                                </div>
+                            </div>
+                            
+                            <!-- Experienced Skills (70%) -->
+                            <div class="skill-item">
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                    <span style="font-weight: 600; color: var(--primary-color);">Hadoop</span>
+                                    <span style="color: var(--secondary-color); font-weight: 500;">Experienced</span>
+                                </div>
+                                <div class="skill-progress" style="height: 8px; background-color: #eaeaea; border-radius: 4px;">
+                                    <div style="height: 100%; width: 70%; background-color: var(--secondary-color); border-radius: 4px;"></div>
+                                </div>
+                            </div>
+                            
+                            <!-- Skilled Skills (60%) -->
+                            <div class="skill-item">
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                    <span style="font-weight: 600; color: var(--primary-color);">NoSQL</span>
+                                    <span style="color: var(--secondary-color); font-weight: 500;">Skilled</span>
+                                </div>
+                                <div class="skill-progress" style="height: 8px; background-color: #eaeaea; border-radius: 4px;">
+                                    <div style="height: 100%; width: 60%; background-color: var(--secondary-color); border-radius: 4px;"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
