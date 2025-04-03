@@ -3,13 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Omar Alkhadra - Portfolio</title>
-    <!-- Add Font Awesome for icons -->
+    <title>Omar Alkhadra - About Me</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Add Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Core Styles */
         :root {
             --primary-color: #2c3e50;
             --secondary-color: #3498db;
@@ -34,35 +31,13 @@
             background-color: #f5f7fa;
         }
         
-        a {
-            text-decoration: none;
-            color: var(--secondary-color);
-            transition: var(--transition);
-        }
-        
-        a:hover {
-            color: var(--accent-color);
-        }
-        
-        /* Fixed Header with Navigation */
         header {
             background-color: var(--primary-color);
             color: white;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            padding: 0;
-        }
-        
-        .header-container {
+            padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem;
         }
         
         .logo {
@@ -83,126 +58,43 @@
         nav ul li a {
             color: white;
             font-weight: 500;
+            text-decoration: none;
             padding: 0.5rem 0;
             position: relative;
-            cursor: pointer;
-        }
-        
-        nav ul li a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 3px;
-            background-color: var(--secondary-color);
-            bottom: 0;
-            left: 0;
-            transition: width 0.3s ease;
-        }
-        
-        nav ul li a:hover::after,
-        nav ul li a.active::after {
-            width: 100%;
         }
         
         nav ul li a.active {
             color: var(--secondary-color);
         }
         
-        .contact-info {
-            display: flex;
-            align-items: center;
+        nav ul li a.active::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            background-color: var(--secondary-color);
+            bottom: 0;
+            left: 0;
         }
         
-        .contact-info a {
-            margin-left: 1rem;
+        .social-icons a {
             color: white;
+            margin-left: 1rem;
+            font-size: 1.2rem;
         }
         
-        .contact-info a:hover {
-            color: var(--secondary-color);
-        }
-        
-        /* Adjust for fixed header */
         main {
-            margin-top: 70px;
-            min-height: calc(100vh - 70px);
-        }
-        
-        /* Tab Content Styling */
-        .section {
-            padding: 4rem 2rem;
-            display: none;
-        }
-        
-        .section.active {
-            display: block;
-            animation: fadeIn 0.5s ease;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        
-        /* About Section with Stats */
-        #about-container {
             max-width: 1200px;
             margin: 0 auto;
-        }
-        
-        .about-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        
-        .about-content {
-            flex: 1;
-            min-width: 300px;
-        }
-        
-        .stats-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-        
-        .stat-box {
-            background-color: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: var(--card-shadow);
-            flex: 1;
-            min-width: 150px;
-            text-align: center;
-            transition: var(--transition);
-        }
-        
-        .stat-box:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: var(--secondary-color);
-            margin-bottom: 0.5rem;
-        }
-        
-        .stat-label {
-            font-size: 0.9rem;
-            color: #666;
+            padding: 2rem;
         }
         
         .section-title {
-            position: relative;
             font-family: 'Montserrat', sans-serif;
-            font-size: 2rem;
-            margin-bottom: 2rem;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
             color: var(--primary-color);
+            position: relative;
             display: inline-block;
         }
         
@@ -216,539 +108,408 @@
             left: 0;
         }
         
-        /* Experience Section */
-        .timeline {
-            position: relative;
-            max-width: 1200px;
-            margin: 2rem auto 0;
+        .about-content {
+            margin-top: 2rem;
         }
         
-        .timeline::after {
-            content: '';
-            position: absolute;
-            width: 3px;
-            background-color: var(--secondary-color);
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            margin-left: -1.5px;
+        .about-content p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
         }
         
-        .timeline-item {
-            padding: 10px 40px;
-            position: relative;
-            width: 50%;
-            box-sizing: border-box;
+        .stats-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin: 2.5rem 0;
         }
         
-        .timeline-item::after {
-            content: '';
-            position: absolute;
-            width: 20px;
-            height: 20px;
+        .stat-box {
             background-color: white;
-            border: 4px solid var(--secondary-color);
-            border-radius: 50%;
-            top: 15px;
-            z-index: 1;
-        }
-        
-        .left {
-            left: 0;
-        }
-        
-        .right {
-            left: 50%;
-        }
-        
-        .left::after {
-            right: -10px;
-        }
-        
-        .right::after {
-            left: -10px;
-        }
-        
-        .timeline-content {
             padding: 1.5rem;
-            background-color: white;
-            position: relative;
             border-radius: 8px;
             box-shadow: var(--card-shadow);
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
             transition: var(--transition);
         }
         
-        .timeline-content:hover {
+        .stat-box:hover {
+            transform: translateY(-5px);
             box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
         }
         
-        .timeline-date {
+        .stat-number {
+            font-size: 3rem;
             font-weight: bold;
             color: var(--secondary-color);
             margin-bottom: 0.5rem;
         }
         
-        .timeline-role {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 0.25rem;
-            color: var(--primary-color);
-        }
-        
-        .timeline-company {
-            font-size: 1rem;
-            font-weight: 500;
-            margin-bottom: 1rem;
+        .stat-label {
+            font-size: 1.1rem;
             color: #666;
         }
         
-        .timeline-details {
-            margin-top: 1rem;
+        .skills-section {
+            margin: 3rem 0;
         }
         
-        .timeline-details ul {
-            list-style: none;
-        }
-        
-        .timeline-details ul li {
-            position: relative;
-            padding-left: 1.5rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .timeline-details ul li::before {
-            content: '⋄';
-            position: absolute;
-            left: 0;
-            color: var(--secondary-color);
-        }
-        
-        /* Project Cards Styling */
-        .projects-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        
-        .project-card {
-            background-color: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: var(--card-shadow);
-            transition: var(--transition);
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-        }
-        
-        .project-image {
-            height: 200px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .project-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        
-        .project-card:hover .project-image img {
-            transform: scale(1.05);
-        }
-        
-        .project-content {
-            padding: 1.5rem;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .project-card h3 {
+        .section-subtitle {
             font-family: 'Montserrat', sans-serif;
-            font-size: 1.4rem;
-            margin-bottom: 0.5rem;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
             color: var(--primary-color);
         }
         
-        .project-tags {
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+            gap: 2rem;
+        }
+        
+        .skills-category {
+            margin-bottom: 2rem;
+        }
+        
+        .skills-category h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--accent-color);
             display: flex;
-            flex-wrap: wrap;
-            margin: 0.8rem 0;
-            gap: 0.5rem;
-        }
-        
-        .tag {
-            background-color: rgba(52, 152, 219, 0.1);
-            color: var(--secondary-color);
-            padding: 0.3rem 0.8rem;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            transition: var(--transition);
-        }
-        
-        .tag:hover {
-            background-color: var(--secondary-color);
-            color: white;
-        }
-        
-        .project-card p {
-            margin-bottom: 1.5rem;
-            color: #666;
-            flex-grow: 1;
-        }
-        
-        .project-links {
-            margin-top: auto;
-        }
-        
-        .project-link {
-            display: inline-flex;
             align-items: center;
-            background-color: var(--secondary-color);
-            color: white;
-            padding: 0.6rem 1.2rem;
-            border-radius: 4px;
-            font-weight: 500;
-            transition: var(--transition);
         }
         
-        .project-link i {
+        .skills-category h3 i {
             margin-right: 0.5rem;
         }
         
-        .project-link:hover {
-            background-color: var(--primary-color);
-            color: white;
+        .skill-item {
+            margin-bottom: 1rem;
         }
         
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            .timeline::after {
-                left: 31px;
-            }
-            
-            .timeline-item {
-                width: 100%;
-                padding-left: 70px;
-                padding-right: 25px;
-            }
-            
-            .timeline-item::after {
-                left: 21px;
-            }
-            
-            .left::after, .right::after {
-                left: 21px;
-            }
-            
-            .right {
-                left: 0;
-            }
+        .skill-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+        
+        .skill-name {
+            font-weight: 500;
+        }
+        
+        .skill-level-bar {
+            height: 8px;
+            background-color: #e9ecef;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .skill-level-fill {
+            height: 100%;
+            background: linear-gradient(to right, var(--secondary-color), var(--accent-color));
+            border-radius: 4px;
+        }
+        
+        .languages-section {
+            margin: 3rem 0;
+        }
+        
+        .languages-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        
+        .language-item {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: var(--card-shadow);
+            flex: 1;
+            min-width: 200px;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .language-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .language-flag {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .language-name {
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .language-level {
+            color: #666;
         }
         
         @media (max-width: 768px) {
-            .header-container {
+            header {
                 flex-direction: column;
-                text-align: center;
+                padding: 1rem;
             }
             
             nav ul {
                 margin-top: 1rem;
-                justify-content: center;
-            }
-            
-            nav ul li {
-                margin: 0 0.8rem;
-            }
-            
-            .section-title {
-                font-size: 1.8rem;
-            }
-            
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .about-container {
-                flex-direction: column;
-            }
-            
-            .stat-box {
-                min-width: 100%;
-            }
-            
-            main {
-                margin-top: 140px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .stat-box {
-                padding: 1rem;
-            }
-            
-            .stat-number {
-                font-size: 2rem;
             }
             
             nav ul li {
                 margin: 0 0.5rem;
             }
             
-            .timeline-content {
-                padding: 1rem;
+            .social-icons {
+                margin-top: 1rem;
             }
             
-            .timeline-role {
-                font-size: 1.1rem;
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .stat-box, .language-item {
+                min-width: 100%;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .section-subtitle {
+                font-size: 1.5rem;
+            }
+            
+            .stat-number {
+                font-size: 2.5rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Fixed Header with Navigation -->
     <header>
-        <div class="header-container">
-            <h1 class="logo">Omar Alkhadra</h1>
-            <nav>
-                <ul>
-                    <li><a onclick="openTab('about')" id="about-tab" class="active">About</a></li>
-                    <li><a onclick="openTab('experience')" id="experience-tab">Experience</a></li>
-                    <li><a onclick="openTab('projects')" id="projects-tab">Projects</a></li>
-                </ul>
-            </nav>
-            <div class="contact-info">
-                <a href="mailto:alkhadra@usc.edu" title="Email"><i class="fas fa-envelope"></i></a>
-                <a href="https://www.linkedin.com/in/oalkhadra/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/oalkhadra" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-            </div>
+        <h1 class="logo">Omar Alkhadra</h1>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">About</a></li>
+                <li><a href="#">Experience</a></li>
+                <li><a href="#">Projects</a></li>
+            </ul>
+        </nav>
+        <div class="social-icons">
+            <a href="mailto:alkhadra@usc.edu" title="Email"><i class="fas fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/in/oalkhadra/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/oalkhadra" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
         </div>
     </header>
-
-    <!-- Main Content -->
+    
     <main>
-        <!-- About Me Section -->
-        <section id="about" class="section active">
-            <div id="about-container">
-                <h2 class="section-title">About Me</h2>
-                <div class="about-container">
-                    <div class="about-content">
-                        <p>Results-driven data scientist merging theoretical foundations with practical implementations to solve complex business and technical challenges. Currently pursuing an M.S. in Applied Data Science at USC with a 4.0 GPA, I combine rigorous technical skills with industry experience in risk analytics and machine learning model development. My research background spans decision support tools for environmental impact assessment and large-scale recommendation systems, demonstrating my ability to tackle complex data challenges. Proficient in advanced ML techniques, distributed computing, and spatial data optimization, I'm passionate about leveraging data science to drive strategic decision-making and create innovative solutions. Looking to connect with forward-thinking professionals and organizations at the intersection of AI, risk analytics, and sustainable solutions.</p>
+        <h2 class="section-title">About Me</h2>
+        
+        <div class="about-content">
+            <p>Data scientist specializing in developing innovative ML solutions that bridge theoretical concepts with real-world business challenges. With expertise in geospatial analytics, recommendation systems, and risk modeling, I deliver data-driven solutions that create measurable impact.</p>
+            
+            <p>Currently pursuing an M.S. in Applied Data Science at USC with a 4.0 GPA, I combine rigorous technical skills with industry experience in risk analytics and machine learning model development. My research background spans decision support tools for environmental impact assessment and large-scale recommendation systems, demonstrating my ability to tackle complex data challenges.</p>
+            
+            <p>I'm passionate about leveraging advanced ML techniques, distributed computing, and spatial data optimization to drive strategic decision-making. Seeking opportunities to collaborate with forward-thinking teams at the intersection of AI, risk analytics, and sustainable solutions.</p>
+        </div>
+        
+        <div class="stats-container">
+            <div class="stat-box">
+                <div class="stat-number">4.0</div>
+                <div class="stat-label">USC GPA</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">96%</div>
+                <div class="stat-label">ML Model Accuracy</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">7M+</div>
+                <div class="stat-label">Records Processed</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">3</div>
+                <div class="stat-label">Languages</div>
+            </div>
+        </div>
+        
+        <div class="skills-section">
+            <h3 class="section-subtitle">Technical Skills</h3>
+            
+            <div class="skills-container">
+                <div class="skills-category">
+                    <h3><i class="fas fa-code"></i> Programming</h3>
+                    
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Python</span>
+                            <span class="skill-level">Advanced</span>
+                        </div>
+                        <div class="skill-level-bar">
+                            <div class="skill-level-fill" style="width: 95%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">R</span>
+                            <span class="skill-level">Advanced</span>
+                        </div>
+                        <div class="skill-level-bar">
+                            <div class="skill-level-fill" style="width: 90%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">SQL</span>
+                            <span class="skill-level">Advanced</span>
+                        </div>
+                        <div class="skill-level-bar">
+                            <div class="skill-level-fill" style="width: 85%;"></div>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="stats-container">
-                    <div class="stat-box">
-                        <div class="stat-number">4.0</div>
-                        <div class="stat-label">USC GPA</div>
+                <div class="skills-category">
+                    <h3><i class="fas fa-brain"></i> Machine Learning</h3>
+                    
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Scikit-learn</span>
+                            <span class="skill-level">Advanced</span>
+                        </div>
+                        <div class="skill-level-bar">
+                            <div class="skill-level-fill" style="width: 90%;"></div>
+                        </div>
                     </div>
-                    <div class="stat-box">
-                        <div class="stat-number">96%</div>
-                        <div class="stat-label">ML Model Accuracy</div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">TensorFlow/PyTorch</span>
+                            <span class="skill-level">Advanced</span>
+                        </div>
+                        <div class="skill-level-bar">
+                            <div class="skill-level-fill" style="width: 85%;"></div>
+                        </div>
                     </div>
-                    <div class="stat-box">
-                        <div class="stat-number">7M+</div>
-                        <div class="stat-label">Records Processed</div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">XGBoost</span>
+                            <span class="skill-level">Advanced</span>
+                        </div>
+                        <div class="skill-level-bar">
+                            <div class="skill-level-fill" style="width: 90%;"></div>
+                        </div>
                     </div>
-                    <div class="stat-box">
-                        <div class="stat-number">3</div>
-                        <div class="stat-label">Languages</div>
+                </div>
+                
+                <div class="skills-category">
+                    <h3><i class="fas fa-database"></i> Data Engineering</h3>
+                    
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Apache Spark</span>
+                            <span class="skill-level">Intermediate</span>
+                        </div>
+                        <div class="skill-level-bar">
+                            <div class="skill-level-fill" style="width: 80%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Hadoop</span>
+                            <span class="skill-level">Intermediate</span>
+                        </div>
+                        <div class="skill-level-bar">
+                            <div class="skill-level-fill" style="width: 75%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">ETL Pipelines</span>
+                            <span class="skill-level">Intermediate</span>
+                        </div>
+                        <div class="skill-level-bar">
+                            <div class="skill-level-fill" style="width: 80%;"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skills-category">
+                    <h3><i class="fas fa-cloud"></i> Cloud & DevOps</h3>
+                    
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Azure</span>
+                            <span class="skill-level">Intermediate</span>
+                        </div>
+                        <div class="skill-level-bar">
+                            <div class="skill-level-fill" style="width: 80%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">AWS</span>
+                            <span class="skill-level">Intermediate</span>
+                        </div>
+                        <div class="skill-level-bar">
+                            <div class="skill-level-fill" style="width: 75%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Git/Docker</span>
+                            <span class="skill-level">Intermediate</span>
+                        </div>
+                        <div class="skill-level-bar">
+                            <div class="skill-level-fill" style="width: 80%;"></div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
         
-        <!-- Experience Section -->
-        <section id="experience" class="section">
-            <div id="experience-container">
-                <h2 class="section-title">Experience</h2>
-                <div class="timeline">
-                    <!-- USC Experience -->
-                    <div class="timeline-item right">
-                        <div class="timeline-content">
-                            <div class="timeline-date">Dec 2024 - Present</div>
-                            <div class="timeline-role">ML Researcher</div>
-                            <div class="timeline-company">University of Southern California, Los Angeles, CA</div>
-                            <div class="timeline-details">
-                                <ul>
-                                    <li>Engineered a spatiotemporal deep learning model utilizing PyTorch for POI prediction</li>
-                                    <li>Collaborated with PhD students to leverage Gaussian Mixture Models for probabilistic classification</li>
-                                    <li>Deployed and tested model on Azure VM instance with SSH remote access, evaluating against state-of-the-art baselines</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Axa XL Experience -->
-                    <div class="timeline-item left">
-                        <div class="timeline-content">
-                            <div class="timeline-date">Jun 2024 - Aug 2024</div>
-                            <div class="timeline-role">Cyber Intern - Data Science</div>
-                            <div class="timeline-company">Axa XL, Los Angeles, CA</div>
-                            <div class="timeline-details">
-                                <ul>
-                                    <li>Spearheaded analysis of insurance rater modifiers, architecting ML models achieving 96% prediction accuracy</li>
-                                    <li>Conducted rigorous statistical analysis using multivariate methods and hypothesis testing on 10,000+ policies</li>
-                                    <li>Communicated technical insights to cross-functional teams, translating complex findings into actionable insights</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- GWU Experience -->
-                    <div class="timeline-item right">
-                        <div class="timeline-content">
-                            <div class="timeline-date">Aug 2022 - May 2023</div>
-                            <div class="timeline-role">Systems Engineering Researcher</div>
-                            <div class="timeline-company">George Washington University, Washington, D.C.</div>
-                            <div class="timeline-details">
-                                <ul>
-                                    <li>Built a decision-support tool using I/O and inoperability modeling to evaluate economic impacts of drought</li>
-                                    <li>Identified policy interventions reducing potential economic losses by 67% ($5.36 Billion USD)</li>
-                                    <li>Developed user interface for policy simulation and co-authored peer-reviewed paper on methodology</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+        <div class="languages-section">
+            <h3 class="section-subtitle">Languages</h3>
+            
+            <div class="languages-container">
+                <div class="language-item">
+                    <div class="language-flag">🇺🇸</div>
+                    <div class="language-name">English</div>
+                    <div class="language-level">Fluent</div>
+                </div>
+                
+                <div class="language-item">
+                    <div class="language-flag">🇦🇪</div>
+                    <div class="language-name">Arabic</div>
+                    <div class="language-level">Fluent</div>
+                </div>
+                
+                <div class="language-item">
+                    <div class="language-flag">🇫🇷</div>
+                    <div class="language-name">French</div>
+                    <div class="language-level">Intermediate</div>
                 </div>
             </div>
-        </section>
-        
-        <!-- Projects Section -->
-        <section id="projects" class="section">
-            <div class="projects-container">
-                <h2 class="section-title">Projects</h2>
-                <div class="projects-grid">
-                    <!-- Project 1: Yelp Recommendation System -->
-                    <div class="project-card">
-                        <div class="project-image">
-                            <img src="images/yelp-recommendation.png" alt="Yelp Recommendation System">
-                        </div>
-                        <div class="project-content">
-                            <h3>Yelp Recommendation System</h3>
-                            <div class="project-tags">
-                                <span class="tag">Machine Learning</span>
-                                <span class="tag">XGBoost</span>
-                                <span class="tag">Spark</span>
-                            </div>
-                            <p>A model-based recommendation system processing 7M+ Yelp reviews, achieving 0.9752 RMSE through advanced feature engineering and distributed computing.</p>
-                            <div class="project-links">
-                                <a href="https://github.com/Oalkhadra/Recommendation-System" target="_blank" class="project-link"><i class="fab fa-github"></i> Repo</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Project 2: Geospatial Store Locator -->
-                    <div class="project-card">
-                        <div class="project-image">
-                            <img src="images/geospatial-store-locator.png" alt="Geospatial Store Locator">
-                        </div>
-                        <div class="project-content">
-                            <h3>PepsiCo Geospatial Store Locator</h3>
-                            <div class="project-tags">
-                                <span class="tag">Geospatial Analysis</span>
-                                <span class="tag">Flask</span>
-                                <span class="tag">KNN</span>
-                            </div>
-                            <p>A KNN-based store locator, reducing route planning time by 95% and processing 3,000+ store locations. Features include interactive map visualization, distance-based sorting, and data export capabilities.</p>
-                            <div class="project-links">
-                                <a href="https://github.com/Oalkhadra/geospatial-store-locator" target="_blank" class="project-link"><i class="fab fa-github"></i> Repo</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Project 3: Geospatial Network Indexing -->
-                    <div class="project-card">
-                        <div class="project-image">
-                            <img src="images/geospatial-network.png" alt="Geospatial Network Indexing">
-                        </div>
-                        <div class="project-content">
-                            <h3>Geospatial Network Indexing</h3>
-                            <div class="project-tags">
-                                <span class="tag">Geospatial Information</span>
-                                <span class="tag">Network Analysis</span>
-                                <span class="tag">Spatial Indexing</span>
-                            </div>
-                            <p>A geospatial indexing system that efficiently partitions road network data; Tested through the implementation of optimized nearest neighbor search algorithms.</p>
-                            <div class="project-links">
-                                <a href="https://github.com/Oalkhadra/Geospatial-Network-Indexing" target="_blank" class="project-link"><i class="fab fa-github"></i> Repo</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Project 4: Hospital Appointment Manager -->
-                    <div class="project-card">
-                        <div class="project-image">
-                            <img src="images/hospital-manager.png" alt="Hospital Appointment Manager">
-                        </div>
-                        <div class="project-content">
-                            <h3>Hospital Appointment Manager</h3>
-                            <div class="project-tags">
-                                <span class="tag">Database Design</span>
-                                <span class="tag">Streamlit</span>
-                                <span class="tag">MySQL</span>
-                            </div>
-                            <p>A distributed database system with role-based access controls and hash-based partitioning. Features a comprehensive Streamlit UI with authentication systems for hospital receptionists to manage patient appointment data efficiently.</p>
-                            <div class="project-links">
-                                <a href="https://github.com/Oalkhadra/Hospital-Appointment-Manager" target="_blank" class="project-link"><i class="fab fa-github"></i> Repo</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Project 5: BFR Clustering Algorithm -->
-                    <div class="project-card">
-                        <div class="project-image">
-                            <img src="images/clustering.png" alt="BFR Clustering Algorithm">
-                        </div>
-                        <div class="project-content">
-                            <h3>BFR Clustering Algorithm</h3>
-                            <div class="project-tags">
-                                <span class="tag">Machine Learning</span>
-                                <span class="tag">Clustering</span>
-                            </div>
-                            <p>An implementation of the Bradley-Fayyad-Reina (BFR) algorithm for clustering large datasets, achieving 99% accuracy through statistical summarization.</p>
-                            <div class="project-links">
-                                <a href="https://github.com/Oalkhadra/BFR-Clustering" target="_blank" class="project-link"><i class="fab fa-github"></i> Repo</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        </div>
     </main>
-    
-    <script>
-        // Tab switching functionality
-        function openTab(tabName) {
-            // Hide all sections
-            const sections = document.querySelectorAll('.section');
-            sections.forEach(section => {
-                section.classList.remove('active');
-            });
-            
-            // Show selected section
-            document.getElementById(tabName).classList.add('active');
-            
-            // Update active tab
-            const tabs = document.querySelectorAll('nav ul li a');
-            tabs.forEach(tab => {
-                tab.classList.remove('active');
-            });
-            document.getElementById(tabName + '-tab').classList.add('active');
-        }
-    </script>
 </body>
 </html>
