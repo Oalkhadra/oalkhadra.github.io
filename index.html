@@ -1,290 +1,4 @@
-<style>
-        :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #3498db;
-            --accent-color: #2980b9;
-            --light-color: #ecf0f1;
-            --dark-color: #1a252f;
-            --text-color: #333333;
-            --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            --transition: all 0.3s ease;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Roboto', sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: #f5f7fa;
-        }
-        
-        header {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.8rem;
-            font-weight: 700;
-        }
-        
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-        
-        nav ul li {
-            margin-left: 2rem;
-        }
-        
-        nav ul li a {
-            color: white;
-            font-weight: 500;
-            text-decoration: none;
-            padding: 0.5rem 0;
-            position: relative;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-        
-        nav ul li a:hover {
-            color: var(--secondary-color);
-        }
-        
-        nav ul li a.active {
-            color: var(--secondary-color);
-        }
-        
-        nav ul li a.active::after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 3px;
-            background-color: var(--secondary-color);
-            bottom: 0;
-            left: 0;
-        }
-        
-        .social-icons a {
-            color: white;
-            margin-left: 1rem;
-            font-size: 1.2rem;
-        }
-        
-        main {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-        
-        .section-title {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            color: var(--primary-color);
-            position: relative;
-            display: inline-block;
-        }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            width: 60px;
-            height: 3px;
-            background-color: var(--secondary-color);
-            bottom: -8px;
-            left: 0;
-        }
-        
-        .about-content {
-            margin-top: 2rem;
-        }
-        
-        .about-content p {
-            margin-bottom: 1.5rem;
-            font-size: 1.1rem;
-        }
-        
-        .skills-section {
-            margin: 3rem 0;
-        }
-        
-        .section-subtitle {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            color: var(--primary-color);
-        }
-        
-        .skills-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
-            gap: 2rem;
-        }
-        
-        .skills-category {
-            margin-bottom: 2rem;
-        }
-        
-        .skills-category h3 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-            color: var(--accent-color);
-            display: flex;
-            align-items: center;
-        }
-        
-        .skills-category h3 i {
-            margin-right: 0.5rem;
-        }
-        
-        .skill-item {
-            margin-bottom: 1rem;
-        }
-        
-        .skill-info {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 0.5rem;
-        }
-        
-        .skill-name {
-            font-weight: 500;
-        }
-        
-        .skill-level-bar {
-            height: 8px;
-            background-color: #e9ecef;
-            border-radius: 4px;
-            overflow: hidden;
-        }
-        
-        .skill-level-fill {
-            height: 100%;
-            background: linear-gradient(to right, var(--secondary-color), var(--accent-color));
-            border-radius: 4px;
-        }
-        
-        .languages-section {
-            margin: 3rem 0;
-        }
-        
-        .languages-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-        }
-        
-        .language-item {
-            background-color: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: var(--card-shadow);
-            flex: 1;
-            min-width: 200px;
-            transition: var(--transition);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        
-        .language-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        
-        .language-name {
-            font-weight: 600;
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .language-level {
-            color: #666;
-        }
-        
-        .education-section {
-            margin: 3rem 0;
-        }
-        
-        .education-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
-            gap: 2rem;
-        }
-        
-        .education-item {
-            background-color: white;
-            padding: 1.8rem;
-            border-radius: 12px;
-            box-shadow: var(--card-shadow);
-            transition: var(--transition);
-            position: relative;
-            border-top: 4px solid var(--secondary-color);
-        }
-        
-        .education-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.12);
-        }
-        
-        .education-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 0.8rem;
-        }
-        
-        .institution {
-            font-weight: 700;
-            font-size: 1.3rem;
-            color: var(--primary-color);
-            font-family: 'Montserrat', sans-serif;
-        }
-        
-        .education-period {
-            color: white;
-            background-color: var(--secondary-color);
-            padding: 0.4rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
-        
-        .degree {
-            font-size: 1.15rem;
-            margin-bottom: 0.7rem;
-            font-weight: 500;
-            color: var(--accent-color);
-        }
-        
-        .location {
-            display: flex;
-            align-items: center;
-            color: #666;
-            margin-bottom: 0.7rem;
-            font-size: 0.95rem;
-        }
-        
-        .location::before {
-            content: '\f3c5';
-            font-family: 'Font Awesome 5 Free';
-            font-weight: 900;
-            margin-right: 0.5rem;
-            color: #888;
-        }<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -347,12 +61,6 @@
             text-decoration: none;
             padding: 0.5rem 0;
             position: relative;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-        
-        nav ul li a:hover {
-            color: var(--secondary-color);
         }
         
         nav ul li a.active {
@@ -509,116 +217,6 @@
             color: #666;
         }
         
-        .education-section {
-            margin: 3rem 0;
-        }
-        
-        .education-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
-            gap: 2rem;
-        }
-        
-        .education-item {
-            background-color: white;
-            padding: 1.8rem;
-            border-radius: 12px;
-            box-shadow: var(--card-shadow);
-            transition: var(--transition);
-            position: relative;
-            border-top: 4px solid var(--secondary-color);
-        }
-        
-        .education-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.12);
-        }
-        
-        .education-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 0.8rem;
-        }
-        
-        .institution {
-            font-weight: 700;
-            font-size: 1.3rem;
-            color: var(--primary-color);
-            font-family: 'Montserrat', sans-serif;
-        }
-        
-        .education-period {
-            color: white;
-            background-color: var(--secondary-color);
-            padding: 0.4rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
-        
-        .degree {
-            font-size: 1.15rem;
-            margin-bottom: 0.7rem;
-            font-weight: 500;
-            color: var(--accent-color);
-        }
-        
-        .location {
-            display: flex;
-            align-items: center;
-            color: #666;
-            margin-bottom: 0.7rem;
-            font-size: 0.95rem;
-        }
-        
-        .location::before {
-            content: '\\f3c5';
-            font-family: 'Font Awesome 5 Free';
-            font-weight: 900;
-            margin-right: 0.5rem;
-            color: #888;
-        }
-        
-        .gpa {
-            display: inline-block;
-            color: var(--primary-color);
-            margin-bottom: 1.2rem;
-            font-weight: 500;
-            padding: 0.3rem 0.7rem;
-            background-color: #f0f7ff;
-            border-radius: 4px;
-            border-left: 3px solid var(--secondary-color);
-        }
-        
-        .coursework-title {
-            font-weight: 600;
-            margin-bottom: 0.8rem;
-            color: var(--primary-color);
-            font-size: 1.05rem;
-        }
-        
-        .coursework-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.7rem;
-        }
-        
-        .course-item {
-            background-color: #f8f9fa;
-            padding: 0.5rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            border: 1px solid #e9ecef;
-            color: var(--accent-color);
-            transition: var(--transition);
-        }
-        
-        .course-item:hover {
-            background-color: var(--light-color);
-            transform: translateY(-2px);
-        }
-        
         @media (max-width: 768px) {
             header {
                 flex-direction: column;
@@ -641,9 +239,6 @@
                 grid-template-columns: 1fr;
             }
             
-            .education-container {
-                grid-template-columns: 1fr;
-            }
         }
         
         @media (max-width: 480px) {
@@ -654,15 +249,7 @@
             .section-subtitle {
                 font-size: 1.5rem;
             }
-        }
-        
-        /* Tab functionality styles */
-        .section-content {
-            display: none;
-        }
-        
-        .active-section {
-            display: block;
+            
         }
     </style>
 </head>
@@ -671,9 +258,9 @@
         <h1 class="logo">Omar Alkhadra</h1>
         <nav>
             <ul>
-                <li><a href="#about" class="active" onclick="activateTab(this, 'about-section')">About</a></li>
-                <li><a href="#experience" onclick="activateTab(this, 'experience-section')">Experience</a></li>
-                <li><a href="#projects" onclick="activateTab(this, 'projects-section')">Projects</a></li>
+                <li><a href="#" class="active">About</a></li>
+                <li><a href="#">Experience</a></li>
+                <li><a href="#">Projects</a></li>
             </ul>
         </nav>
         <div class="social-icons">
@@ -684,261 +271,178 @@
     </header>
     
     <main>
-        <section id="about-section" class="active-section">
-            <h2 class="section-title">About Me</h2>
-            
-            <div class="about-content">
-                <p>Data scientist specializing in developing innovative ML solutions that bridge theoretical concepts with real-world business challenges. With expertise in geospatial analytics, recommendation systems, and risk modeling, I deliver data-driven solutions that create measurable impact.</p>
-                
-                <p>Currently pursuing an M.S. in Applied Data Science at USC with a 4.0 GPA, I combine rigorous technical skills with industry experience in risk analytics and machine learning model development. My research background spans decision support tools for environmental impact assessment and large-scale recommendation systems, demonstrating my ability to tackle complex data challenges.</p>
-                
-                <p>I'm passionate about leveraging advanced ML techniques, distributed computing, and spatial data optimization to drive strategic decision-making. Seeking opportunities to collaborate with forward-thinking teams at the intersection of AI, risk analytics, and sustainable solutions.</p>
-            </div>
-            
-            <div class="education-section">
-                <h3 class="section-subtitle">Education</h3>
-                
-                <div class="education-container">
-                    <div class="education-item">
-                        <div class="education-header">
-                            <div class="institution">University of Southern California</div>
-                            <div class="education-period">2023-2025</div>
-                        </div>
-                        <div class="degree">M.S. in Applied Data Science</div>
-                        <div class="location">Los Angeles, CA</div>
-                        <div class="gpa">GPA: 4.0</div>
-                        <div class="coursework-title">Relevant Coursework:</div>
-                        <div class="coursework-list">
-                            <span class="course-item">Machine Learning</span>
-                            <span class="course-item">Data Mining</span>
-                            <span class="course-item">Geospatial Information Management</span>
-                            <span class="course-item">Data Management</span>
-                            <span class="course-item">Security and Privacy</span>
-                            <span class="course-item">Database Systems</span>
-                        </div>
-                    </div>
-                    
-                    <div class="education-item">
-                        <div class="education-header">
-                            <div class="institution">George Washington University</div>
-                            <div class="education-period">2019-2023</div>
-                        </div>
-                        <div class="degree">B.S. in Systems Engineering</div>
-                        <div class="location">Washington, D.C.</div>
-                        <div class="gpa">GPA: 3.7</div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="skills-section">
-                <h3 class="section-subtitle">Technical Skills</h3>
-                
-                <div class="skills-container">
-                    <div class="skills-category">
-                        <h3><i class="fas fa-code"></i> Programming</h3>
-                        
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span class="skill-name">Python</span>
-                                <span class="skill-level">Fluent</span>
-                            </div>
-                            <div class="skill-level-bar">
-                                <div class="skill-level-fill" style="width: 95%;"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span class="skill-name">R</span>
-                                <span class="skill-level">Proficient</span>
-                            </div>
-                            <div class="skill-level-bar">
-                                <div class="skill-level-fill" style="width: 85%;"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span class="skill-name">SQL</span>
-                                <span class="skill-level">Proficient</span>
-                            </div>
-                            <div class="skill-level-bar">
-                                <div class="skill-level-fill" style="width: 85%;"></div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="skills-category">
-                        <h3><i class="fas fa-brain"></i> Machine Learning</h3>
-                        
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span class="skill-name">Scikit-learn</span>
-                                <span class="skill-level">Proficient</span>
-                            </div>
-                            <div class="skill-level-bar">
-                                <div class="skill-level-fill" style="width: 85%;"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span class="skill-name">PyTorch</span>
-                                <span class="skill-level">Skilled</span>
-                            </div>
-                            <div class="skill-level-bar">
-                                <div class="skill-level-fill" style="width: 75%;"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span class="skill-name">XGBoost</span>
-                                <span class="skill-level">Skilled</span>
-                            </div>
-                            <div class="skill-level-bar">
-                                <div class="skill-level-fill" style="width: 75%;"></div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="skills-category">
-                        <h3><i class="fas fa-database"></i> Data Engineering</h3>
-                        
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span class="skill-name">Apache Spark</span>
-                                <span class="skill-level">Proficient</span>
-                            </div>
-                            <div class="skill-level-bar">
-                                <div class="skill-level-fill" style="width: 80%;"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span class="skill-name">ETL Pipelines</span>
-                                <span class="skill-level">Proficient</span>
-                            </div>
-                            <div class="skill-level-bar">
-                                <div class="skill-level-fill" style="width: 80%;"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span class="skill-name">NoSQL</span>
-                                <span class="skill-level">Familiar</span>
-                            </div>
-                            <div class="skill-level-bar">
-                                <div class="skill-level-fill" style="width: 60%;"></div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="skills-category">
-                        <h3><i class="fas fa-cloud"></i> Cloud & DevOps</h3>
-                        
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span class="skill-name">Azure</span>
-                                <span class="skill-level">Experienced</span>
-                            </div>
-                            <div class="skill-level-bar">
-                                <div class="skill-level-fill" style="width: 70%;"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span class="skill-name">Git</span>
-                                <span class="skill-level">Experienced</span>
-                            </div>
-                            <div class="skill-level-bar">
-                                <div class="skill-level-fill" style="width: 70%;"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span class="skill-name">Docker</span>
-                                <span class="skill-level">Experienced</span>
-                            </div>
-                            <div class="skill-level-bar">
-                                <div class="skill-level-fill" style="width: 70%;"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="languages-section">
-                <h3 class="section-subtitle">Languages</h3>
-                
-                <div class="languages-container">
-                    <div class="language-item">
-                        <div class="language-name">English</div>
-                        <div class="language-level">Fluent</div>
-                    </div>
-                    
-                    <div class="language-item">
-                        <div class="language-name">Arabic</div>
-                        <div class="language-level">Fluent</div>
-                    </div>
-                    
-                    <div class="language-item">
-                        <div class="language-name">French</div>
-                        <div class="language-level">Intermediate</div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <h2 class="section-title">About Me</h2>
         
-        <section id="experience-section" class="section-content">
-            <h2 class="section-title">Experience</h2>
-            <p>This section is currently under development. Check back soon for updates on my professional experience.</p>
-        </section>
+        <div class="about-content">
+            <p>Data scientist specializing in developing innovative ML solutions that bridge theoretical concepts with real-world business challenges. With expertise in geospatial analytics, recommendation systems, and risk modeling, I deliver data-driven solutions that create measurable impact.</p>
+            
+            <p>Currently pursuing an M.S. in Applied Data Science at USC with a 4.0 GPA, I combine rigorous technical skills with industry experience in risk analytics and machine learning model development. My research background spans decision support tools for environmental impact assessment and large-scale recommendation systems, demonstrating my ability to tackle complex data challenges.</p>
+            
+            <p>I'm passionate about leveraging advanced ML techniques, distributed computing, and spatial data optimization to drive strategic decision-making. Seeking opportunities to collaborate with forward-thinking teams at the intersection of AI, risk analytics, and sustainable solutions.</p>
+        </div>
         
-        <section id="projects-section" class="section-content">
-            <h2 class="section-title">Projects</h2>
-            <p>This section is currently under development. Check back soon for updates on my latest projects.</p>
-        </section>
+        <div class="skills-section">
+            <h3 class="section-subtitle">Technical Skills</h3>
+            
+            <div class="skills-container">
+                <div class="skills-category">
+                    <h3><i class="fas fa-code"></i> Programming</h3>
+                    
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Python</span>
+                            <span class="skill-level">Advanced</span>
+                        </div>
+                        <div class="skill-level-bar">
+                            <div class="skill-level-fill" style="width: 95%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">R</span>
+                            <span class="skill-level">Advanced</span>
+                        </div>
+                        <div class="skill-level-bar">
+                            <div class="skill-level-fill" style="width: 90%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">SQL</span>
+                            <span class="skill-level">Advanced</span>
+                        </div>
+                        <div class="skill-level-bar">
+                            <div class="skill-level-fill" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skills-category">
+                    <h3><i class="fas fa-brain"></i> Machine Learning</h3>
+                    
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Scikit-learn</span>
+                            <span class="skill-level">Advanced</span>
+                        </div>
+                        <div class="skill-level-bar">
+                            <div class="skill-level-fill" style="width: 90%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">TensorFlow/PyTorch</span>
+                            <span class="skill-level">Advanced</span>
+                        </div>
+                        <div class="skill-level-bar">
+                            <div class="skill-level-fill" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">XGBoost</span>
+                            <span class="skill-level">Advanced</span>
+                        </div>
+                        <div class="skill-level-bar">
+                            <div class="skill-level-fill" style="width: 90%;"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skills-category">
+                    <h3><i class="fas fa-database"></i> Data Engineering</h3>
+                    
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Apache Spark</span>
+                            <span class="skill-level">Intermediate</span>
+                        </div>
+                        <div class="skill-level-bar">
+                            <div class="skill-level-fill" style="width: 80%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Hadoop</span>
+                            <span class="skill-level">Intermediate</span>
+                        </div>
+                        <div class="skill-level-bar">
+                            <div class="skill-level-fill" style="width: 75%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">ETL Pipelines</span>
+                            <span class="skill-level">Intermediate</span>
+                        </div>
+                        <div class="skill-level-bar">
+                            <div class="skill-level-fill" style="width: 80%;"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skills-category">
+                    <h3><i class="fas fa-cloud"></i> Cloud & DevOps</h3>
+                    
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Azure</span>
+                            <span class="skill-level">Intermediate</span>
+                        </div>
+                        <div class="skill-level-bar">
+                            <div class="skill-level-fill" style="width: 80%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">AWS</span>
+                            <span class="skill-level">Intermediate</span>
+                        </div>
+                        <div class="skill-level-bar">
+                            <div class="skill-level-fill" style="width: 75%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Git/Docker</span>
+                            <span class="skill-level">Intermediate</span>
+                        </div>
+                        <div class="skill-level-bar">
+                            <div class="skill-level-fill" style="width: 80%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="languages-section">
+            <h3 class="section-subtitle">Languages</h3>
+            
+            <div class="languages-container">
+                <div class="language-item">
+                    <div class="language-name">English</div>
+                    <div class="language-level">Fluent</div>
+                </div>
+                
+                <div class="language-item">
+                    <div class="language-name">Arabic</div>
+                    <div class="language-level">Fluent</div>
+                </div>
+                
+                <div class="language-item">
+                    <div class="language-name">French</div>
+                    <div class="language-level">Intermediate</div>
+                </div>
+            </div>
+        </div>
     </main>
-    <script>
-        function activateTab(clickedTab, sectionId) {
-            // Remove active class from all tabs
-            document.querySelectorAll('nav ul li a').forEach(tab => {
-                tab.classList.remove('active');
-            });
-            
-            // Add active class to clicked tab
-            clickedTab.classList.add('active');
-            
-            // Hide all sections
-            document.querySelectorAll('section').forEach(section => {
-                section.style.display = 'none';
-                section.classList.remove('active-section');
-            });
-            
-            // Show the selected section
-            document.getElementById(sectionId).style.display = 'block';
-            document.getElementById(sectionId).classList.add('active-section');
-        }
-        
-        // Initialize tabs
-        document.addEventListener('DOMContentLoaded', function() {
-            // Show the default tab (About)
-            document.getElementById('about-section').style.display = 'block';
-            
-            // Add click event listeners to all tabs
-            document.querySelectorAll('nav ul li a').forEach(tab => {
-                tab.addEventListener('click', function(event) {
-                    event.preventDefault();
-                    const sectionId = this.getAttribute('href').substring(1);
-                    activateTab(this, sectionId);
-                });
-            });
-        });
-    </script>
 </body>
 </html>
