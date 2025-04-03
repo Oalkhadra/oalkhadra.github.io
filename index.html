@@ -217,6 +217,78 @@
             color: #666;
         }
         
+        .education-section {
+            margin: 3rem 0;
+        }
+        
+        .education-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+            gap: 2rem;
+        }
+        
+        .education-item {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+        }
+        
+        .education-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .education-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+        
+        .institution {
+            font-weight: 600;
+            font-size: 1.2rem;
+            color: var(--primary-color);
+        }
+        
+        .education-period {
+            color: #666;
+        }
+        
+        .degree {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .location {
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+        
+        .gpa {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+        
+        .coursework-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .coursework-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .course-item {
+            background-color: var(--light-color);
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+        
         @media (max-width: 768px) {
             header {
                 flex-direction: column;
@@ -239,6 +311,9 @@
                 grid-template-columns: 1fr;
             }
             
+            .education-container {
+                grid-template-columns: 1fr;
+            }
         }
         
         @media (max-width: 480px) {
@@ -281,6 +356,41 @@
             <p>I'm passionate about leveraging advanced ML techniques, distributed computing, and spatial data optimization to drive strategic decision-making. Seeking opportunities to collaborate with forward-thinking teams at the intersection of AI, risk analytics, and sustainable solutions.</p>
         </div>
         
+        <div class="education-section">
+            <h3 class="section-subtitle">Education</h3>
+            
+            <div class="education-container">
+                <div class="education-item">
+                    <div class="education-header">
+                        <div class="institution">University of Southern California</div>
+                        <div class="education-period">May 2025</div>
+                    </div>
+                    <div class="degree">M.S. in Applied Data Science</div>
+                    <div class="location">Los Angeles, CA</div>
+                    <div class="gpa">GPA: 4.0</div>
+                    <div class="coursework-title">Relevant Coursework:</div>
+                    <div class="coursework-list">
+                        <span class="course-item">Machine Learning</span>
+                        <span class="course-item">Data Mining</span>
+                        <span class="course-item">Geospatial Information Management</span>
+                        <span class="course-item">Data Management</span>
+                        <span class="course-item">Security and Privacy</span>
+                        <span class="course-item">Database Systems</span>
+                    </div>
+                </div>
+                
+                <div class="education-item">
+                    <div class="education-header">
+                        <div class="institution">George Washington University</div>
+                        <div class="education-period">May 2023</div>
+                    </div>
+                    <div class="degree">B.S. in Systems Engineering</div>
+                    <div class="location">Washington, D.C.</div>
+                    <div class="gpa">GPA: 3.7</div>
+                </div>
+            </div>
+        </div>
+        
         <div class="skills-section">
             <h3 class="section-subtitle">Technical Skills</h3>
             
@@ -291,7 +401,7 @@
                     <div class="skill-item">
                         <div class="skill-info">
                             <span class="skill-name">Python</span>
-                            <span class="skill-level">Advanced</span>
+                            <span class="skill-level">Fluent</span>
                         </div>
                         <div class="skill-level-bar">
                             <div class="skill-level-fill" style="width: 95%;"></div>
@@ -301,17 +411,17 @@
                     <div class="skill-item">
                         <div class="skill-info">
                             <span class="skill-name">R</span>
-                            <span class="skill-level">Advanced</span>
+                            <span class="skill-level">Proficient</span>
                         </div>
                         <div class="skill-level-bar">
-                            <div class="skill-level-fill" style="width: 90%;"></div>
+                            <div class="skill-level-fill" style="width: 85%;"></div>
                         </div>
                     </div>
                     
                     <div class="skill-item">
                         <div class="skill-info">
                             <span class="skill-name">SQL</span>
-                            <span class="skill-level">Advanced</span>
+                            <span class="skill-level">Proficient</span>
                         </div>
                         <div class="skill-level-bar">
                             <div class="skill-level-fill" style="width: 85%;"></div>
@@ -325,17 +435,7 @@
                     <div class="skill-item">
                         <div class="skill-info">
                             <span class="skill-name">Scikit-learn</span>
-                            <span class="skill-level">Advanced</span>
-                        </div>
-                        <div class="skill-level-bar">
-                            <div class="skill-level-fill" style="width: 90%;"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span class="skill-name">TensorFlow/PyTorch</span>
-                            <span class="skill-level">Advanced</span>
+                            <span class="skill-level">Proficient</span>
                         </div>
                         <div class="skill-level-bar">
                             <div class="skill-level-fill" style="width: 85%;"></div>
@@ -344,11 +444,21 @@
                     
                     <div class="skill-item">
                         <div class="skill-info">
-                            <span class="skill-name">XGBoost</span>
-                            <span class="skill-level">Advanced</span>
+                            <span class="skill-name">PyTorch</span>
+                            <span class="skill-level">Skilled</span>
                         </div>
                         <div class="skill-level-bar">
-                            <div class="skill-level-fill" style="width: 90%;"></div>
+                            <div class="skill-level-fill" style="width: 75%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">XGBoost</span>
+                            <span class="skill-level">Skilled</span>
+                        </div>
+                        <div class="skill-level-bar">
+                            <div class="skill-level-fill" style="width: 75%;"></div>
                         </div>
                     </div>
                 </div>
@@ -359,30 +469,30 @@
                     <div class="skill-item">
                         <div class="skill-info">
                             <span class="skill-name">Apache Spark</span>
-                            <span class="skill-level">Intermediate</span>
+                            <span class="skill-level">Proficient</span>
                         </div>
                         <div class="skill-level-bar">
                             <div class="skill-level-fill" style="width: 80%;"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span class="skill-name">Hadoop</span>
-                            <span class="skill-level">Intermediate</span>
-                        </div>
-                        <div class="skill-level-bar">
-                            <div class="skill-level-fill" style="width: 75%;"></div>
                         </div>
                     </div>
                     
                     <div class="skill-item">
                         <div class="skill-info">
                             <span class="skill-name">ETL Pipelines</span>
-                            <span class="skill-level">Intermediate</span>
+                            <span class="skill-level">Proficient</span>
                         </div>
                         <div class="skill-level-bar">
                             <div class="skill-level-fill" style="width: 80%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">NoSQL</span>
+                            <span class="skill-level">Familiar</span>
+                        </div>
+                        <div class="skill-level-bar">
+                            <div class="skill-level-fill" style="width: 60%;"></div>
                         </div>
                     </div>
                 </div>
@@ -393,30 +503,30 @@
                     <div class="skill-item">
                         <div class="skill-info">
                             <span class="skill-name">Azure</span>
-                            <span class="skill-level">Intermediate</span>
+                            <span class="skill-level">Experienced</span>
                         </div>
                         <div class="skill-level-bar">
-                            <div class="skill-level-fill" style="width: 80%;"></div>
+                            <div class="skill-level-fill" style="width: 70%;"></div>
                         </div>
                     </div>
                     
                     <div class="skill-item">
                         <div class="skill-info">
-                            <span class="skill-name">AWS</span>
-                            <span class="skill-level">Intermediate</span>
+                            <span class="skill-name">Git</span>
+                            <span class="skill-level">Experienced</span>
                         </div>
                         <div class="skill-level-bar">
-                            <div class="skill-level-fill" style="width: 75%;"></div>
+                            <div class="skill-level-fill" style="width: 70%;"></div>
                         </div>
                     </div>
                     
                     <div class="skill-item">
                         <div class="skill-info">
-                            <span class="skill-name">Git/Docker</span>
-                            <span class="skill-level">Intermediate</span>
+                            <span class="skill-name">Docker</span>
+                            <span class="skill-level">Experienced</span>
                         </div>
                         <div class="skill-level-bar">
-                            <div class="skill-level-fill" style="width: 80%;"></div>
+                            <div class="skill-level-fill" style="width: 70%;"></div>
                         </div>
                     </div>
                 </div>
