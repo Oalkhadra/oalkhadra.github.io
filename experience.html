@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About — Omar Alkhadra</title>
+  <title>Experience — Omar Alkhadra</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
@@ -44,44 +44,70 @@
 
     <div class="content-column">
       <nav class="top-nav" aria-label="Site sections">
-        <a href="index.html" aria-current="page">About</a>
+        <a href="index.html">About</a>
         <a href="publications.html">Publications</a>
-        <a href="experience.html">Experience</a>
+        <a href="experience.html" aria-current="page">Experience</a>
         <a href="research.html">Research</a>
       </nav>
 
       <main class="page-main">
-        <h1 class="page-title">About</h1>
+        <h1 class="page-title">Experience</h1>
 
-        <section class="prose">
+        <article class="experience-item">
+          <h3>Data Scientist</h3>
+          <p class="meta">GEICO Pricing &middot; <time datetime="2025-06">Jun 2025 &ndash; present</time></p>
           <p>
-            I am a data scientist at GEICO Pricing and a prospective PhD applicant in statistics, applied mathematics,
-            and operations research. I earned an M.S. in Applied Data Science from the University of Southern California
-            (GPA 4.0) and a B.S. in Systems Engineering from George Washington University with a minor in statistics.
+            Developed an XGBoost model on 150M+ policyholder records predicting defection probability as a function of
+            premium changes and customer features. Built a stochastic simulation of policyholder attrition under rate-change
+            scenarios with an interactive dashboard, now used to inform pricing decisions across states representing over
+            $100M in annual written premium.
           </p>
+        </article>
+
+        <article class="experience-item">
+          <h3>Machine Learning Researcher</h3>
+          <p class="meta">USC InfoLab &middot; <time datetime="2024-12/2025-05">Dec 2024 &ndash; May 2025</time></p>
           <p>
-            My work focuses on probabilistic modeling and decision-making under uncertainty&mdash;from geospatial
-            attribution and prediction-market calibration to stochastic modeling at insurance scale. I am drawn to
-            problems where principled uncertainty quantification changes what you should do next.
+            Co-developed a transformer-based framework for point-of-interest attribution from noisy GPS trajectories under
+            spatial and temporal uncertainty. Reconstructed proprietary probabilistic baselines from limited documentation
+            to establish reproducible benchmarks and built a fault-tolerant ETL pipeline processing 30M+ geospatial records.
+            Work published as <a href="publications.html">POIFormer (SIGSPATIAL 2025)</a>.
           </p>
+        </article>
+
+        <article class="experience-item">
+          <h3>Cyber Data Science Intern</h3>
+          <p class="meta">AXA XL &middot; <time datetime="2024-06/2024-08">Jun 2024 &ndash; Aug 2024</time></p>
+          <p>
+            Developed and deployed predictive models achieving 96% accuracy for insurance modifiers using Python and R.
+            Led a team of seven in a comprehensive analysis of corporate performance across the US Eastern Zone, identifying
+            five KPIs and communicating technical insights to cross-functional stakeholders.
+          </p>
+        </article>
+
+        <article class="experience-item">
+          <h3>Research Assistant</h3>
+          <p class="meta">GWU Systems Engineering &middot; <time datetime="2022-08/2023-05">Aug 2022 &ndash; May 2023</time></p>
+          <p>
+            Built a dynamic inoperability input-output model to quantify cascading economic losses across interdependent
+            sectors facing drought. Conducted sensitivity analysis over policy intervention scenarios; co-authored a
+            peer-reviewed paper in <em>Environment Systems and Decisions</em>.
+          </p>
+        </article>
+
+        <section aria-labelledby="education-heading">
+          <h2 id="education-heading">Education</h2>
+          <ul class="compact-list">
+            <li class="compact-item">
+              <div class="role"><strong>M.S. Applied Data Science</strong> <span class="org">&middot; University of Southern California &middot; GPA 4.0</span></div>
+              <time class="date" datetime="2023/2025">2023 &ndash; 2025</time>
+            </li>
+            <li class="compact-item">
+              <div class="role"><strong>B.S. Systems Engineering</strong> <span class="org">&middot; George Washington University &middot; Minor in Statistics &middot; GPA 3.64</span></div>
+              <time class="date" datetime="2019/2023">2019 &ndash; 2023</time>
+            </li>
+          </ul>
         </section>
-
-        <section class="prose" aria-labelledby="interests-heading">
-          <h2 id="interests-heading">Research Interests</h2>
-          <p>
-            I work on probabilistic modeling under uncertainty, with a focus on calibrated forecasting and decision-making in
-            noisy, high-dimensional settings. My recent work spans point-of-interest attribution from sparse GPS trajectories,
-            probabilistic forecast evaluation in prediction markets, and stochastic modeling of policyholder behavior at scale.
-            I am especially interested in problems where principled uncertainty quantification meaningfully changes downstream
-            decisions&mdash;in operations research, financial mathematics, and spatial statistics.
-          </p>
-        </section>
-
-        <p class="note">
-          <strong>Currently:</strong> Based in Chicago. Applying to PhD programs for Fall 2027 entry.
-          See <a href="publications.html">publications</a>, <a href="research.html">research</a>, and
-          <a href="experience.html">experience</a> for details.
-        </p>
       </main>
     </div>
 
