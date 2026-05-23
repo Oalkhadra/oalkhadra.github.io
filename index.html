@@ -1,988 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Omar Alkhadra - Portfolio</title>
-    <!-- Add Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Add Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        /* Core Styles */
-        :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #3498db;
-            --accent-color: #2980b9;
-            --light-color: #ecf0f1;
-            --dark-color: #1a252f;
-            --text-color: #333333;
-            --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            --transition: all 0.3s ease;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Roboto', sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: #f5f7fa;
-        }
-        
-        a {
-            text-decoration: none;
-            color: var(--secondary-color);
-            transition: var(--transition);
-        }
-        
-        a:hover {
-            color: var(--accent-color);
-        }
-        
-        /* Fixed Header with Navigation */
-        header {
-            background-color: var(--primary-color);
-            color: white;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            padding: 0;
-        }
-        
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem;
-        }
-        
-        .logo {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.8rem;
-            font-weight: 700;
-        }
-        
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-        
-        nav ul li {
-            margin-left: 2rem;
-        }
-        
-        nav ul li a {
-            color: white;
-            font-weight: 500;
-            padding: 0.5rem 0;
-            position: relative;
-            cursor: pointer;
-        }
-        
-        nav ul li a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 3px;
-            background-color: var(--secondary-color);
-            bottom: 0;
-            left: 0;
-            transition: width 0.3s ease;
-        }
-        
-        nav ul li a:hover::after,
-        nav ul li a.active::after {
-            width: 100%;
-        }
-        
-        nav ul li a.active {
-            color: var(--secondary-color);
-        }
-        
-        .contact-info {
-            display: flex;
-            align-items: center;
-        }
-        
-        .contact-info a {
-            margin-left: 1rem;
-            color: white;
-        }
-        
-        .contact-info a:hover {
-            color: var(--secondary-color);
-        }
-        
-        /* Adjust for fixed header */
-        main {
-            margin-top: 70px;
-            min-height: calc(100vh - 70px);
-        }
-        
-        /* Tab Content Styling */
-        .section {
-            padding: 4rem 2rem;
-            display: none;
-        }
-        
-        .section.active {
-            display: block;
-            animation: fadeIn 0.5s ease;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        
-        /* About Section with Stats */
-        #about-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .about-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        
-        .about-content {
-            flex: 1;
-            min-width: 300px;
-        }
-        
-        .stats-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-        
-        .stat-box {
-            background-color: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: var(--card-shadow);
-            flex: 1;
-            min-width: 150px;
-            text-align: center;
-            transition: var(--transition);
-        }
-        
-        .stat-box:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: var(--secondary-color);
-            margin-bottom: 0.5rem;
-        }
-        
-        .stat-label {
-            font-size: 0.9rem;
-            color: #666;
-        }
-        
-        .section-title {
-            position: relative;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 2rem;
-            margin-bottom: 2rem;
-            color: var(--primary-color);
-            display: inline-block;
-        }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            width: 60px;
-            height: 3px;
-            background-color: var(--secondary-color);
-            bottom: -8px;
-            left: 0;
-        }
-        
-        /* Experience Section */
-        .timeline {
-            position: relative;
-            max-width: 1200px;
-            margin: 2rem auto 0;
-        }
-        
-        .timeline::after {
-            content: '';
-            position: absolute;
-            width: 3px;
-            background-color: var(--secondary-color);
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            margin-left: -1.5px;
-        }
-        
-        .timeline-item {
-            padding: 10px 40px;
-            position: relative;
-            width: 50%;
-            box-sizing: border-box;
-        }
-        
-        .timeline-item::after {
-            content: '';
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background-color: white;
-            border: 4px solid var(--secondary-color);
-            border-radius: 50%;
-            top: 15px;
-            z-index: 1;
-        }
-        
-        .left {
-            left: 0;
-        }
-        
-        .right {
-            left: 50%;
-        }
-        
-        .left::after {
-            right: -10px;
-        }
-        
-        .right::after {
-            left: -10px;
-        }
-        
-        .timeline-content {
-            padding: 1.5rem;
-            background-color: white;
-            position: relative;
-            border-radius: 8px;
-            box-shadow: var(--card-shadow);
-            transition: var(--transition);
-        }
-        
-        .timeline-content:hover {
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .timeline-date {
-            font-weight: bold;
-            color: var(--secondary-color);
-            margin-bottom: 0.5rem;
-        }
-        
-        .timeline-role {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 0.25rem;
-            color: var(--primary-color);
-        }
-        
-        .timeline-company {
-            font-size: 1rem;
-            font-weight: 500;
-            margin-bottom: 1rem;
-            color: #666;
-        }
-        
-        .timeline-details {
-            margin-top: 1rem;
-        }
-        
-        .timeline-details ul {
-            list-style: none;
-        }
-        
-        .timeline-details ul li {
-            position: relative;
-            padding-left: 1.5rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .timeline-details ul li::before {
-            content: '⋄';
-            position: absolute;
-            left: 0;
-            color: var(--secondary-color);
-        }
-        
-        /* Project Cards Styling */
-        .projects-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        
-        .project-card {
-            background-color: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: var(--card-shadow);
-            transition: var(--transition);
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-        }
-        
-        .project-image {
-            height: 200px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .project-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        
-        .project-card:hover .project-image img {
-            transform: scale(1.05);
-        }
-        
-        .project-content {
-            padding: 1.5rem;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .project-card h3 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.4rem;
-            margin-bottom: 0.5rem;
-            color: var(--primary-color);
-        }
-        
-        .project-tags {
-            display: flex;
-            flex-wrap: wrap;
-            margin: 0.8rem 0;
-            gap: 0.5rem;
-        }
-        
-        .tag {
-            background-color: rgba(52, 152, 219, 0.1);
-            color: var(--secondary-color);
-            padding: 0.3rem 0.8rem;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            transition: var(--transition);
-        }
-        
-        .tag:hover {
-            background-color: var(--secondary-color);
-            color: white;
-        }
-        
-        .project-card p {
-            margin-bottom: 1.5rem;
-            color: #666;
-            flex-grow: 1;
-        }
-        
-        .project-links {
-            margin-top: auto;
-        }
-        
-        .project-link {
-            display: inline-flex;
-            align-items: center;
-            background-color: var(--secondary-color);
-            color: white;
-            padding: 0.6rem 1.2rem;
-            border-radius: 4px;
-            font-weight: 500;
-            transition: var(--transition);
-        }
-        
-        .project-link i {
-            margin-right: 0.5rem;
-        }
-        
-        .project-link:hover {
-            background-color: var(--primary-color);
-            color: white;
-        }
-        
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            .timeline::after {
-                left: 31px;
-            }
-            
-            .timeline-item {
-                width: 100%;
-                padding-left: 70px;
-                padding-right: 25px;
-            }
-            
-            .timeline-item::after {
-                left: 21px;
-            }
-            
-            .left::after, .right::after {
-                left: 21px;
-            }
-            
-            .right {
-                left: 0;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .header-container {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            nav ul {
-                margin-top: 1rem;
-                justify-content: center;
-            }
-            
-            nav ul li {
-                margin: 0 0.8rem;
-            }
-            
-            .section-title {
-                font-size: 1.8rem;
-            }
-            
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .about-container {
-                flex-direction: column;
-            }
-            
-            .stat-box {
-                min-width: 100%;
-            }
-            
-            main {
-                margin-top: 140px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .stat-box {
-                padding: 1rem;
-            }
-            
-            .stat-number {
-                font-size: 2rem;
-            }
-            
-            nav ul li {
-                margin: 0 0.5rem;
-            }
-            
-            .timeline-content {
-                padding: 1rem;
-            }
-            
-            .timeline-role {
-                font-size: 1.1rem;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Omar Alkhadra</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Fixed Header with Navigation -->
+  <main>
+
     <header>
-        <div class="header-container">
-            <h1 class="logo">Omar Alkhadra</h1>
-            <nav>
-                <ul>
-                    <li><a onclick="openTab('about')" id="about-tab" class="active">About</a></li>
-                    <li><a onclick="openTab('experience')" id="experience-tab">Experience</a></li>
-                    <li><a onclick="openTab('projects')" id="projects-tab">Projects</a></li>
-                </ul>
-            </nav>
-            <div class="contact-info">
-                <a href="mailto:alkhadra@usc.edu" title="Email"><i class="fas fa-envelope"></i></a>
-                <a href="https://www.linkedin.com/in/oalkhadra/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/oalkhadra" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-            </div>
-        </div>
+      <figure class="headshot">
+        <img src="assets/headshot.jpg" alt="Omar Alkhadra" width="92" height="92">
+      </figure>
+      <div class="header-text">
+        <h1>Omar Alkhadra</h1>
+        <p class="tagline">Data Scientist, GEICO Pricing. Prospective PhD student in statistics / applied mathematics.</p>
+        <nav class="header-links" aria-label="Contact and profiles">
+          <a href="mailto:omar.alkhadra@outlook.com">email</a>
+          <a href="assets/cv.pdf">cv</a>
+          <a href="https://github.com/oalkhadra">github</a>
+          <a href="https://www.linkedin.com/in/oalkhadra/">linkedin</a>
+          <a href="#">scholar</a>
+        </nav>
+      </div>
     </header>
 
-    <!-- Main Content -->
-    <main>
-        <!-- About Me Section -->
-        <section id="about" class="section active">
-            <div id="about-container">
-                <h2 class="section-title">About Me</h2>
-                <div class="about-container">
-                    <div class="about-content">
-                        <p>Data scientist merging theoretical ML concepts with business solutions. Completing my M.S. in Applied Data Science at USC with a 4.0 GPA, I combine rigorous technical skills with industry experience and research spanning environmental impact assessment, large-scale data processing, predictive modeling, and recommendation systems. Passionate about leveraging advanced ML techniques with efficient computing to drive strategic decision-making at the intersection of AI, risk analytics, and sustainable solutions.</p>
-                    </div>
-                </div>
-                
-                <!-- Enhanced Education Section -->
-                <h3 class="section-title" style="font-size: 1.6rem; margin-top: 3rem;">Education</h3>
-                <div class="education-container" style="display: flex; flex-wrap: wrap; gap: 1.5rem; margin-top: 1.5rem;">
-                    <div class="education-card" style="background-color: white; border-radius: 8px; box-shadow: var(--card-shadow); padding: 1.5rem; flex: 1; min-width: 300px; transition: var(--transition); display: flex; align-items: center;">
-                        <div class="education-logo" style="width: 80px; height: 80px; margin-right: 1.5rem; display: flex; justify-content: center; align-items: center; background-color: #f5f5f5; border-radius: 50%; overflow: hidden; flex-shrink: 0;">
-                            <img src="images/usc.png" alt="USC Logo" style="max-width: 100%; max-height: 75%; object-fit: contain;" />
-                        </div>
-                        <div class="education-info" style="flex-grow: 1;">
-                            <div class="education-date" style="font-weight: bold; color: var(--secondary-color);">2023 - 2025</div>
-                            <div class="education-degree" style="font-size: 1.2rem; font-weight: 600; color: var(--primary-color); margin: 0.5rem 0;">M.S. Applied Data Science</div>
-                            <div class="education-school" style="font-size: 1rem; font-weight: 500; color: #666;">University of Southern California</div>
-                            <div class="education-details" style="margin-top: 0.8rem; color: #666;">
-                                <p><strong>GPA:</strong> 4.0</p>
-                                <p><strong>Relevant Coursework:</strong> Machine Learning, Data Mining, Geospatial Information Management, Data Management, Database Systems, Security and Privacy</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="education-card" style="background-color: white; border-radius: 8px; box-shadow: var(--card-shadow); padding: 1.5rem; flex: 1; min-width: 300px; transition: var(--transition); display: flex; align-items: center;">
-                        <div class="education-logo" style="width: 80px; height: 80px; margin-right: 1.5rem; display: flex; justify-content: center; align-items: center; background-color: #f5f5f5; border-radius: 50%; overflow: hidden; flex-shrink: 0;">
-                            <img src="images/gwu.png" alt="GWU Logo" style="max-width: 100%; max-height: 75%; object-fit: contain;" />
-                        </div>
-                        <div class="education-info" style="flex-grow: 1;">
-                            <div class="education-date" style="font-weight: bold; color: var(--secondary-color);">2019 - 2023</div>
-                            <div class="education-degree" style="font-size: 1.2rem; font-weight: 600; color: var(--primary-color); margin: 0.5rem 0;">B.S. Systems Engineering</div>
-                            <div class="education-school" style="font-size: 1rem; font-weight: 500; color: #666;">George Washington University</div>
-                            <div class="education-details" style="margin-top: 0.8rem; color: #666;">
-                                <p><strong>GPA:</strong> 3.7</p>
-                                <p><strong>Relevant Coursework:</strong> Risk Analysis & Management, Applied Optimization Modeling, Exploratory Data Analysis, Bayesian Statistics, Project Management</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Enhanced Skills Section with Progress Bars -->
-                <h3 class="section-title" style="font-size: 1.6rem; margin-top: 3rem;">Technical Skills</h3>
-                <div class="skills-container" style="margin-top: 1.5rem;">
-                    <div class="skill-category" style="margin-bottom: 2rem; background-color: white; border-radius: 8px; box-shadow: var(--card-shadow); padding: 1.5rem; transition: var(--transition);">
-                        <h4 style="font-size: 1.1rem; color: var(--primary-color); margin-bottom: 1rem; border-bottom: 2px solid var(--secondary-color); padding-bottom: 0.5rem; display: inline-block;">Programming & Tools</h4>
-                        <div class="skill-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 1rem;">
-                            <!-- Fluent Skills (90%) -->
-                            <div class="skill-item">
-                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-                                    <span style="font-weight: 600; color: var(--primary-color);">Python</span>
-                                    <span style="color: var(--secondary-color); font-weight: 500;">Fluent</span>
-                                </div>
-                                <div class="skill-progress" style="height: 8px; background-color: #eaeaea; border-radius: 4px;">
-                                    <div style="height: 100%; width: 90%; background-color: var(--secondary-color); border-radius: 4px;"></div>
-                                </div>
-                            </div>
-                            
-                            <!-- Proficient Skills (80%) -->
-                            <div class="skill-item">
-                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-                                    <span style="font-weight: 600; color: var(--primary-color);">R</span>
-                                    <span style="color: var(--secondary-color); font-weight: 500;">Proficient</span>
-                                </div>
-                                <div class="skill-progress" style="height: 8px; background-color: #eaeaea; border-radius: 4px;">
-                                    <div style="height: 100%; width: 80%; background-color: var(--secondary-color); border-radius: 4px;"></div>
-                                </div>
-                            </div>
-                            
-                            <div class="skill-item">
-                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-                                    <span style="font-weight: 600; color: var(--primary-color);">SQL</span>
-                                    <span style="color: var(--secondary-color); font-weight: 500;">Proficient</span>
-                                </div>
-                                <div class="skill-progress" style="height: 8px; background-color: #eaeaea; border-radius: 4px;">
-                                    <div style="height: 100%; width: 80%; background-color: var(--secondary-color); border-radius: 4px;"></div>
-                                </div>
-                            </div>
-                            
-                            <!-- Experienced Skills (70%) -->
-                            <div class="skill-item">
-                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-                                    <span style="font-weight: 600; color: var(--primary-color);">Azure</span>
-                                    <span style="color: var(--secondary-color); font-weight: 500;">Experienced</span>
-                                </div>
-                                <div class="skill-progress" style="height: 8px; background-color: #eaeaea; border-radius: 4px;">
-                                    <div style="height: 100%; width: 70%; background-color: var(--secondary-color); border-radius: 4px;"></div>
-                                </div>
-                            </div>
-                            
-                            <div class="skill-item">
-                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-                                    <span style="font-weight: 600; color: var(--primary-color);">Git</span>
-                                    <span style="color: var(--secondary-color); font-weight: 500;">Experienced</span>
-                                </div>
-                                <div class="skill-progress" style="height: 8px; background-color: #eaeaea; border-radius: 4px;">
-                                    <div style="height: 100%; width: 70%; background-color: var(--secondary-color); border-radius: 4px;"></div>
-                                </div>
-                            </div>
-                            
-                            <!-- Skilled Skills (60%) -->
-                            <div class="skill-item">
-                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-                                    <span style="font-weight: 600; color: var(--primary-color);">Docker</span>
-                                    <span style="color: var(--secondary-color); font-weight: 500;">Skilled</span>
-                                </div>
-                                <div class="skill-progress" style="height: 8px; background-color: #eaeaea; border-radius: 4px;">
-                                    <div style="height: 100%; width: 60%; background-color: var(--secondary-color); border-radius: 4px;"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="skill-category" style="margin-bottom: 2rem; background-color: white; border-radius: 8px; box-shadow: var(--card-shadow); padding: 1.5rem; transition: var(--transition);">
-                        <h4 style="font-size: 1.1rem; color: var(--primary-color); margin-bottom: 1rem; border-bottom: 2px solid var(--secondary-color); padding-bottom: 0.5rem; display: inline-block;">Machine Learning</h4>
-                        <div class="skill-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 1rem;">
-                            <!-- Fluent Skills (90%) -->
-                            <div class="skill-item">
-                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-                                    <span style="font-weight: 600; color: var(--primary-color);">Scikit-learn</span>
-                                    <span style="color: var(--secondary-color); font-weight: 500;">Proficient</span>
-                                </div>
-                                <div class="skill-progress" style="height: 8px; background-color: #eaeaea; border-radius: 4px;">
-                                    <div style="height: 100%; width: 80%; background-color: var(--secondary-color); border-radius: 4px;"></div>
-                                </div>
-                            </div>
-                            
-                            <div class="skill-item">
-                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-                                    <span style="font-weight: 600; color: var(--primary-color);">XGBoost</span>
-                                    <span style="color: var(--secondary-color); font-weight: 500;">Proficient</span>
-                                </div>
-                                <div class="skill-progress" style="height: 8px; background-color: #eaeaea; border-radius: 4px;">
-                                    <div style="height: 100%; width: 80%; background-color: var(--secondary-color); border-radius: 4px;"></div>
-                                </div>
-                            </div>
-                            
-                            <div class="skill-item">
-                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-                                    <span style="font-weight: 600; color: var(--primary-color);">PyTorch</span>
-                                    <span style="color: var(--secondary-color); font-weight: 500;">Proficient</span>
-                                </div>
-                                <div class="skill-progress" style="height: 8px; background-color: #eaeaea; border-radius: 4px;">
-                                    <div style="height: 100%; width: 80%; background-color: var(--secondary-color); border-radius: 4px;"></div>
-                                </div>
-                            </div>
-                            
-                            <!-- Skilled Skills (60%) -->
-                            <div class="skill-item">
-                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-                                    <span style="font-weight: 600; color: var(--primary-color);">TensorFlow</span>
-                                    <span style="color: var(--secondary-color); font-weight: 500;">Skilled</span>
-                                </div>
-                                <div class="skill-progress" style="height: 8px; background-color: #eaeaea; border-radius: 4px;">
-                                    <div style="height: 100%; width: 60%; background-color: var(--secondary-color); border-radius: 4px;"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="skill-category" style="margin-bottom: 2rem; background-color: white; border-radius: 8px; box-shadow: var(--card-shadow); padding: 1.5rem; transition: var(--transition);">
-                        <h4 style="font-size: 1.1rem; color: var(--primary-color); margin-bottom: 1rem; border-bottom: 2px solid var(--secondary-color); padding-bottom: 0.5rem; display: inline-block;">Data Engineering</h4>
-                        <div class="skill-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 1rem;">
-                            <!-- Proficient Skills (80%) -->
-                            <div class="skill-item">
-                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-                                    <span style="font-weight: 600; color: var(--primary-color);">Apache Spark</span>
-                                    <span style="color: var(--secondary-color); font-weight: 500;">Proficient</span>
-                                </div>
-                                <div class="skill-progress" style="height: 8px; background-color: #eaeaea; border-radius: 4px;">
-                                    <div style="height: 100%; width: 80%; background-color: var(--secondary-color); border-radius: 4px;"></div>
-                                </div>
-                            </div>
-                            
-                            <div class="skill-item">
-                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-                                    <span style="font-weight: 600; color: var(--primary-color);">ETL Pipelines</span>
-                                    <span style="color: var(--secondary-color); font-weight: 500;">Proficient</span>
-                                </div>
-                                <div class="skill-progress" style="height: 8px; background-color: #eaeaea; border-radius: 4px;">
-                                    <div style="height: 100%; width: 80%; background-color: var(--secondary-color); border-radius: 4px;"></div>
-                                </div>
-                            </div>
-                            
-                            <!-- Experienced Skills (70%) -->
-                            <div class="skill-item">
-                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-                                    <span style="font-weight: 600; color: var(--primary-color);">Hadoop</span>
-                                    <span style="color: var(--secondary-color); font-weight: 500;">Experienced</span>
-                                </div>
-                                <div class="skill-progress" style="height: 8px; background-color: #eaeaea; border-radius: 4px;">
-                                    <div style="height: 100%; width: 70%; background-color: var(--secondary-color); border-radius: 4px;"></div>
-                                </div>
-                            </div>
-                            
-                            <!-- Skilled Skills (60%) -->
-                            <div class="skill-item">
-                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-                                    <span style="font-weight: 600; color: var(--primary-color);">NoSQL</span>
-                                    <span style="color: var(--secondary-color); font-weight: 500;">Skilled</span>
-                                </div>
-                                <div class="skill-progress" style="height: 8px; background-color: #eaeaea; border-radius: 4px;">
-                                    <div style="height: 100%; width: 60%; background-color: var(--secondary-color); border-radius: 4px;"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <section class="interests" aria-labelledby="research-interests-heading">
+      <h2 id="research-interests-heading">Research Interests</h2>
+      <p>
+        I work on probabilistic modeling under uncertainty, with a focus on calibrated forecasting and decision-making in
+        noisy, high-dimensional settings. My recent work spans point-of-interest attribution from sparse GPS trajectories,
+        probabilistic forecast evaluation in prediction markets, and stochastic modeling of policyholder behavior at scale.
+        I am especially interested in problems where principled uncertainty quantification meaningfully changes downstream
+        decisions &mdash; in operations research, financial mathematics, and spatial statistics.
+      </p>
+    </section>
 
-                <!-- Languages Section (Separated) -->
-                <h3 class="section-title" style="font-size: 1.6rem; margin-top: 3rem;">Languages</h3>
-                <div class="languages-container" style="margin-top: 1.5rem; background-color: white; border-radius: 8px; box-shadow: var(--card-shadow); padding: 1.5rem; transition: var(--transition);">
-                    <div class="language-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 2rem;">
-                        <div class="language-item">
-                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-                                <span style="font-weight: 600; color: var(--primary-color); font-size: 1.1rem;">English</span>
-                                <span style="color: var(--secondary-color); font-weight: 500;">Fluent/Native</span>
-                            </div>
-                            <div class="language-progress" style="height: 8px; background-color: #eaeaea; border-radius: 4px;">
-                                <div style="height: 100%; width: 100%; background-color: var(--secondary-color); border-radius: 4px;"></div>
-                            </div>
-                        </div>
-                        <div class="language-item">
-                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-                                <span style="font-weight: 600; color: var(--primary-color); font-size: 1.1rem;">Arabic</span>
-                                <span style="color: var(--secondary-color); font-weight: 500;">Fluent/Native</span>
-                            </div>
-                            <div class="language-progress" style="height: 8px; background-color: #eaeaea; border-radius: 4px;">
-                                <div style="height: 100%; width: 100%; background-color: var(--secondary-color); border-radius: 4px;"></div>
-                            </div>
-                        </div>
-                        <div class="language-item">
-                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-                                <span style="font-weight: 600; color: var(--primary-color); font-size: 1.1rem;">French</span>
-                                <span style="color: var(--secondary-color); font-weight: 500;">Intermediate</span>
-                            </div>
-                            <div class="language-progress" style="height: 8px; background-color: #eaeaea; border-radius: 4px;">
-                                <div style="height: 100%; width: 60%; background-color: var(--secondary-color); border-radius: 4px;"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Experience Section -->
-        <section id="experience" class="section">
-            <div id="experience-container">
-                <h2 class="section-title">Experience</h2>
-                <div class="timeline">
-                    
-                    <!-- DataAnnotation Experience -->
-                    <div class="timeline-item left">
-                        <div class="timeline-content">
-                            <div class="timeline-date">Mar 2025 - Present</div>
-                            <div class="timeline-role">AI/ML Developer - AI Trainer</div>
-                            <div class="timeline-company">DataAnnotation - Remote</div>
-                            <div class="timeline-details">
-                                <ul>
-                                    <li>Evaluating AI-generated outputs against rigorous quality benchmarks, providing detailed analysis across diverse tasks, including code generation, ML, and database management</li>
-                                    <li>Conducting comparative performance assessments between competing AI models, identifying specific strengths and pattern-based weaknesses that inform development priorities</li>
-                                    <li>Delivering actionable feedback that directly influences model improvements, resulting in measurable gains in output quality and alignment with user expectations</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- USC Experience -->
-                    <div class="timeline-item right">
-                        <div class="timeline-content">
-                            <div class="timeline-date">Dec 2024 - Present</div>
-                            <div class="timeline-role">ML Researcher</div>
-                            <div class="timeline-company">University of Southern California - Los Angeles, CA</div>
-                            <div class="timeline-details">
-                                <ul>
-                                    <li>Collaborating with PhD researchers to develop a deep learning model utilizing PyTorch for user behavior prediction</li>
-                                    <li>Engineering a fault-tolerant ETL pipeline with validation controls to process 30 million geospatial records</li>
-                                    <li>Emulating state-of-the-art baselines using a GPU-accelerated pipeline to create comparable benchmarks</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Axa XL Experience -->
-                    <div class="timeline-item left">
-                        <div class="timeline-content">
-                            <div class="timeline-date">Jun 2024 - Aug 2024</div>
-                            <div class="timeline-role">Cyber Intern - Data Science</div>
-                            <div class="timeline-company">Axa XL - Los Angeles, CA</div>
-                            <div class="timeline-details">
-                                <ul>
-                                    <li>Developed and deployed predictive models achieving 96% accuracy for insurance modifiers, using Python and R</li>
-                                    <li>Led a team of 7 in a comprehensive analysis of corporate performance across the US Eastern Zone, identifying 5 KPIs</li>
-                                    <li>Communicated technical insights to cross-functional teams, translating complex findings into actionable insights</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- GWU Experience -->
-                    <div class="timeline-item right">
-                        <div class="timeline-content">
-                            <div class="timeline-date">Aug 2022 - May 2023</div>
-                            <div class="timeline-role">Systems Engineering Researcher</div>
-                            <div class="timeline-company">George Washington University - Washington, D.C.</div>
-                            <div class="timeline-details">
-                                <ul>
-                                    <li>Built a decision-support tool using I/O and inoperability modeling to evaluate economic impacts of drought</li>
-                                    <li>Identified policy interventions reducing potential economic losses by 67% (USD 5.36 billion)</li>
-                                    <li>Developed user interface for policy simulation and co-authored peer-reviewed paper on methodology</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Projects Section -->
-        <section id="projects" class="section">
-            <div class="projects-container">
-                <h2 class="section-title">Projects</h2>
-                <div class="projects-grid">
-                    <!-- Project 1: Yelp Recommendation System -->
-                    <div class="project-card">
-                        <div class="project-image">
-                            <img src="images/yelp-recommendation.png" alt="Yelp Recommendation System">
-                        </div>
-                        <div class="project-content">
-                            <h3>Recommendation System</h3>
-                            <div class="project-tags">
-                                <span class="tag">Machine Learning</span>
-                                <span class="tag">XGBoost</span>
-                                <span class="tag">Apache Spark</span>
-                            </div>
-                            <p>An XGBoost-powered recommendation engine that processes over 7 million Yelp reviews with 0.975 RMSE accuracy, leveraging distributed computing and custom feature engineering to deliver personalized business suggestions with 70% faster execution time.</p>
-                            <div class="project-links">
-                                <a href="https://github.com/Oalkhadra/Recommendation-System" target="_blank" class="project-link"><i class="fab fa-github"></i> Repo</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Project 2: Geospatial Store Locator -->
-                    <div class="project-card">
-                        <div class="project-image">
-                            <img src="images/geospatial-store-locator.png" alt="Geospatial Store Locator">
-                        </div>
-                        <div class="project-content">
-                            <h3>PepsiCo Geospatial Store Locator</h3>
-                            <div class="project-tags">
-                                <span class="tag">Geospatial</span>
-                                <span class="tag">Machine Learning</span>
-                                <span class="tag">UI/UX</span>
-                            </div>
-                            <p>Developed a location intelligence system using KNN algorithms that processes 3,000+ PepsiCo retail locations, featuring interactive mapping and proximity-based sorting that reduced planning time by 95%.</p>
-                            <div class="project-links">
-                                <a href="https://github.com/Oalkhadra/geospatial-store-locator" target="_blank" class="project-link"><i class="fab fa-github"></i> Repo</a>
-                            </div>
-                        </div>
-                    </div>
+    <section aria-labelledby="publications-heading">
+      <h2 id="publications-heading">Publications</h2>
 
-                    <!-- Project 3: Hospital Appointment Manager -->
-                    <div class="project-card">
-                        <div class="project-image">
-                            <img src="images/hospital-manager.png" alt="Hospital Appointment Manager">
-                        </div>
-                        <div class="project-content">
-                            <h3>Hospital Appointment Manager</h3>
-                            <div class="project-tags">
-                                <span class="tag">Database Systems</span>
-                                <span class="tag">Streamlit</span>
-                                <span class="tag">MySQL</span>
-                            </div>
-                            <p>A distributed database system with role-based access controls and hash-based partitioning. Features a comprehensive Streamlit UI with authentication systems for hospital receptionists to manage patient appointment data efficiently.</p>
-                            <div class="project-links">
-                                <a href="https://github.com/Oalkhadra/Hospital-Appointment-Manager" target="_blank" class="project-link"><i class="fab fa-github"></i> Repo</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Project 4: Geospatial Network Indexing -->
-                    <div class="project-card">
-                        <div class="project-image">
-                            <img src="images/geospatial-network.png" alt="Geospatial Network Indexing">
-                        </div>
-                        <div class="project-content">
-                            <h3>Geospatial Network Indexing</h3>
-                            <div class="project-tags">
-                                <span class="tag">Geospatial Information</span>
-                                <span class="tag">Network Analysis</span>
-                                <span class="tag">Spatial Indexing</span>
-                            </div>
-                            <p>A geospatial indexing system that efficiently partitions road network data; Tested through the implementation of optimized nearest neighbor search algorithms.</p>
-                            <div class="project-links">
-                                <a href="https://github.com/Oalkhadra/Geospatial-Network-Indexing" target="_blank" class="project-link"><i class="fab fa-github"></i> Repo</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    
-                    <!-- Project 5: BFR Clustering Algorithm -->
-                    <div class="project-card">
-                        <div class="project-image">
-                            <img src="images/clustering.png" alt="BFR Clustering Algorithm">
-                        </div>
-                        <div class="project-content">
-                            <h3>BFR Clustering Algorithm</h3>
-                            <div class="project-tags">
-                                <span class="tag">Machine Learning</span>
-                                <span class="tag">Clustering</span>
-                            </div>
-                            <p>An implementation of the Bradley-Fayyad-Reina (BFR) algorithm for clustering large datasets, achieving 99% accuracy through statistical summarization.</p>
-                            <div class="project-links">
-                                <a href="https://github.com/Oalkhadra/BFR-Clustering" target="_blank" class="project-link"><i class="fab fa-github"></i> Repo</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-    
-    <script>
-        // Tab switching functionality
-        function openTab(tabName) {
-            // Hide all sections
-            const sections = document.querySelectorAll('.section');
-            sections.forEach(section => {
-                section.classList.remove('active');
-            });
-            
-            // Show selected section
-            document.getElementById(tabName).classList.add('active');
-            
-            // Update active tab
-            const tabs = document.querySelectorAll('nav ul li a');
-            tabs.forEach(tab => {
-                tab.classList.remove('active');
-            });
-            document.getElementById(tabName + '-tab').classList.add('active');
-        }
-    </script>
+      <article class="pub">
+        Saxena, N., Hsu, S., Shetty, M., <span class="me">Alkhadra, O.</span>, Shahabi, C., &amp; Horn, A. L. (2025).
+        POIFormer: A Transformer-Based Framework for Accurate and Scalable Point-of-Interest Attribution.
+        <span class="pub-venue">Proceedings of the 33rd ACM SIGSPATIAL International Conference on Advances in Geographic Information Systems</span>, 607&ndash;619.
+        <span class="pub-links"><a href="#">pdf</a> <a href="#">acm</a></span>
+      </article>
+
+      <article class="pub">
+        Santos, J. R., <span class="me">Alkhadra, O.</span>, Makrides, S., Huang, Y., &amp; Menta, A. (2025).
+        Drought impacts across economic sectors with policy analysis of mitigations.
+        <span class="pub-venue">Environment Systems and Decisions</span>.
+        <span class="pub-links"><a href="#">pdf</a> <a href="#">journal</a></span>
+      </article>
+    </section>
+
+    <section aria-labelledby="research-work-heading">
+      <h2 id="research-work-heading">Research &amp; Selected Work</h2>
+
+      <article class="work-item">
+        <h3>Point-of-interest attribution under spatial uncertainty</h3>
+        <p class="meta">With Cyrus Shahabi and the InfoLab group, USC &middot; 2024&ndash;2025</p>
+        <p>
+          Co-developed a transformer-based framework for assigning noisy GPS trajectories to candidate POIs under spatial
+          and temporal uncertainty. Reconstructed proprietary probabilistic baselines &mdash; SafeGraph's multi-stage KDE
+          pipeline and Nishida's ILP formulation with spatiotemporal priors &mdash; from limited documentation to establish
+          reproducible benchmarks. Built a fault-tolerant ETL pipeline processing 30M+ geospatial records.
+        </p>
+        <p class="work-links"><a href="#">paper</a> <a href="#">code</a></p>
+      </article>
+
+      <article class="work-item">
+        <h3>Probabilistic forecasting and prediction market inefficiency</h3>
+        <p class="meta">Independent research &middot; 2025&ndash;present</p>
+        <p>
+          Investigated whether temperature prediction markets are well-calibrated relative to numerical weather prediction
+          ensembles. Built a probabilistic forecast model with Student-t residual distributions and multi-source NWP
+          features across 20 cities; validated selective forecasting edge via PIT (KS=0.033) and Diebold-Mariano (p=0.006)
+          against market-implied distributions on traded contracts. Live deployment ongoing for ongoing calibration analysis.
+        </p>
+        <p class="work-links"><a href="mailto:omar.alkhadra@outlook.com">code available on request</a></p>
+      </article>
+
+      <article class="work-item">
+        <h3>Volatility forecasting for delta-neutral options strategies</h3>
+        <p class="meta">Independent research &middot; 2025</p>
+        <p>
+          Built a volatility forecasting framework comparing XGBoost against GARCH(1,1) and historical baselines on five
+          years of SPY data; Diebold-Mariano confirmed XGBoost outperforming GARCH (p=0.004) with 21% lower RMSE.
+          Implemented a delta-neutral options backtester with Black-Scholes pricing, daily delta rebalancing, and
+          regime-conditional variance risk premium estimation.
+        </p>
+        <p class="work-links"><a href="#">code</a></p>
+      </article>
+
+      <article class="work-item">
+        <h3>Policyholder defection and stochastic attrition modeling</h3>
+        <p class="meta">GEICO Pricing &middot; 2025&ndash;present</p>
+        <p>
+          Developed an XGBoost model on 150M+ policyholder records predicting defection probability as a function of
+          premium changes and customer features. Built a stochastic simulation of policyholder attrition under rate-change
+          scenarios with an interactive dashboard, now used to inform pricing decisions across states representing over
+          $100M in annual written premium.
+        </p>
+      </article>
+
+      <article class="work-item">
+        <h3>Economic loss modeling under interdependent sector disruption</h3>
+        <p class="meta">George Washington University &middot; 2022&ndash;2023</p>
+        <p>
+          Built a dynamic inoperability input-output (Leontief) model to quantify cascading economic losses across
+          interdependent sectors facing drought. Conducted sensitivity analysis over policy intervention scenarios with
+          expert-elicited parameters; identified interventions reducing potential losses by an estimated 67%
+          (~$5.36B). Published in <em>Environment Systems and Decisions</em>.
+        </p>
+        <p class="work-links"><a href="#">paper</a></p>
+      </article>
+
+      <article class="work-item">
+        <h3>Other projects</h3>
+        <p>
+          Earlier work includes a Yelp recommendation system using XGBoost and Spark on 7M+ reviews,
+          a geospatial network indexing system, an implementation of the BFR clustering algorithm, and
+          a distributed hospital appointment database. Source on
+          <a href="https://github.com/oalkhadra">GitHub</a>.
+        </p>
+      </article>
+    </section>
+
+    <section aria-labelledby="experience-heading">
+      <h2 id="experience-heading">Experience</h2>
+      <ul class="compact-list">
+        <li class="compact-item">
+          <div class="role"><strong>Data Scientist</strong> <span class="org">&middot; GEICO Pricing</span></div>
+          <time class="date" datetime="2025-06">Jun 2025 &ndash; present</time>
+        </li>
+        <li class="compact-item">
+          <div class="role"><strong>Machine Learning Researcher</strong> <span class="org">&middot; USC InfoLab</span></div>
+          <time class="date" datetime="2024-12/2025-05">Dec 2024 &ndash; May 2025</time>
+        </li>
+        <li class="compact-item">
+          <div class="role"><strong>Cyber Data Science Intern</strong> <span class="org">&middot; AXA XL</span></div>
+          <time class="date" datetime="2024-06/2024-08">Jun 2024 &ndash; Aug 2024</time>
+        </li>
+        <li class="compact-item">
+          <div class="role"><strong>Research Assistant</strong> <span class="org">&middot; GWU Systems Engineering</span></div>
+          <time class="date" datetime="2022-08/2023-05">Aug 2022 &ndash; May 2023</time>
+        </li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="education-heading">
+      <h2 id="education-heading">Education</h2>
+      <ul class="compact-list">
+        <li class="compact-item">
+          <div class="role"><strong>M.S. Applied Data Science</strong> <span class="org">&middot; University of Southern California &middot; GPA 4.0</span></div>
+          <time class="date" datetime="2023/2025">2023 &ndash; 2025</time>
+        </li>
+        <li class="compact-item">
+          <div class="role"><strong>B.S. Systems Engineering</strong> <span class="org">&middot; George Washington University &middot; Minor in Statistics &middot; GPA 3.64</span></div>
+          <time class="date" datetime="2019/2023">2019 &ndash; 2023</time>
+        </li>
+      </ul>
+    </section>
+
+    <footer>
+      <span>Chicago, IL</span>
+      <time datetime="2026-05">Last updated May 2026</time>
+    </footer>
+
+  </main>
 </body>
 </html>

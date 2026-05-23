@@ -1,0 +1,273 @@
+:root {
+  --text: #1a1a1a;
+  --text-muted: #5a5a5a;
+  --text-faint: #8a8a8a;
+  --accent: #8b1e1e;
+  --accent-hover: #5e1414;
+  --bg: #fdfcfa;
+  --rule: #e8e4dd;
+  --serif: 'Source Serif 4', Charter, 'Iowan Old Style', Georgia, serif;
+  --sans: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 17px;
+}
+
+body {
+  font-family: var(--sans);
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem 6rem;
+}
+
+/* ---------- Header ---------- */
+header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.75rem;
+  margin-bottom: 2.5rem;
+}
+
+.headshot {
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  background: #e0d8cc;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.headshot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.header-text h1 {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 1.15;
+  margin-bottom: 0.4rem;
+  letter-spacing: -0.01em;
+}
+
+.tagline {
+  color: var(--text-muted);
+  font-size: 0.98rem;
+  margin-bottom: 0.65rem;
+}
+
+.header-links {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+}
+
+.header-links a {
+  color: var(--accent);
+  text-decoration: none;
+  margin-right: 0.85rem;
+}
+
+.header-links a:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+}
+
+/* ---------- Section structure ---------- */
+section {
+  margin-top: 2.75rem;
+}
+
+h2 {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-faint);
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+p,
+li {
+  font-size: 1rem;
+}
+
+p {
+  margin-bottom: 0.85rem;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+em {
+  font-family: var(--serif);
+  font-style: italic;
+}
+
+strong {
+  font-weight: 600;
+}
+
+/* ---------- Research interests prose ---------- */
+.interests p {
+  line-height: 1.65;
+  color: var(--text);
+}
+
+/* ---------- Publications ---------- */
+.pub {
+  margin-bottom: 1.1rem;
+  font-size: 0.97rem;
+  line-height: 1.55;
+}
+
+.pub .me {
+  font-weight: 600;
+}
+
+.pub-venue {
+  font-style: italic;
+  font-family: var(--serif);
+}
+
+.pub-links {
+  font-size: 0.88rem;
+  color: var(--text-faint);
+  margin-left: 0.25rem;
+}
+
+.pub-links a {
+  margin-left: 0.4rem;
+}
+
+/* ---------- Research items ---------- */
+.work-item {
+  margin-bottom: 1.6rem;
+}
+
+.work-item h3 {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 1.05rem;
+  margin-bottom: 0.35rem;
+  color: var(--text);
+}
+
+.work-item .meta {
+  font-size: 0.85rem;
+  color: var(--text-faint);
+  margin-bottom: 0.45rem;
+}
+
+.work-item p {
+  margin-bottom: 0.4rem;
+  color: var(--text);
+}
+
+.work-links {
+  font-size: 0.88rem;
+}
+
+.work-links a {
+  margin-right: 0.85rem;
+}
+
+/* ---------- Experience / Education compact lists ---------- */
+.compact-list {
+  list-style: none;
+}
+
+.compact-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  padding: 0.55rem 0;
+  border-bottom: 1px dotted var(--rule);
+  align-items: baseline;
+}
+
+.compact-item:last-child {
+  border-bottom: none;
+}
+
+.compact-item .role {
+  font-size: 0.97rem;
+}
+
+.compact-item .role strong {
+  font-weight: 600;
+}
+
+.compact-item .role .org {
+  color: var(--text-muted);
+}
+
+.compact-item .date {
+  font-size: 0.85rem;
+  color: var(--text-faint);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+/* ---------- Footer ---------- */
+footer {
+  margin-top: 4rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+  font-size: 0.82rem;
+  color: var(--text-faint);
+  display: flex;
+  justify-content: space-between;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 600px) {
+  html {
+    font-size: 16px;
+  }
+
+  main {
+    padding: 2.5rem 1.25rem 4rem;
+  }
+
+  header {
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .compact-item {
+    grid-template-columns: 1fr;
+    gap: 0.15rem;
+  }
+
+  .compact-item .date {
+    order: -1;
+    font-size: 0.78rem;
+  }
+}
