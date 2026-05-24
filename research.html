@@ -53,25 +53,80 @@
       <main class="page-main">
         <h1 class="page-title">Research</h1>
 
+        <h2 class="section-heading">Published work</h2>
+
         <article class="work-item">
-          <h3>Probabilistic forecasting and prediction market inefficiency</h3>
+          <h3>Point-of-interest attribution under spatial and temporal uncertainty</h3>
+          <p class="meta">USC InfoLab, with Cyrus Shahabi &middot; 2024&ndash;2025</p>
+          <p>
+            Attributing noisy GPS trajectories to candidate points of interest is
+            a problem of inference under both spatial and temporal uncertainty:
+            the device location is a distribution, the dwell window is fuzzy, and
+            the set of plausible venues overlaps. Prior work spans heuristic
+            nearest-centroid baselines, multi-stage kernel density methods, and
+            integer-programming formulations with spatiotemporal priors, but the
+            field lacked a reproducible comparison across these approaches.
+          </p>
+          <p>
+            My contribution was the benchmarking suite that made our transformer
+            framework's results interpretable. I reconstructed two proprietary
+            probabilistic baselines from limited documentation: SafeGraph's
+            multi-stage KDE pipeline and Nishida's ILP formulation with
+            spatiotemporal priors. I also built a fault-tolerant ETL pipeline
+            processing 30M+ geospatial records to evaluate all methods on a
+            common footing.
+          </p>
+          <p class="work-links"><a href="publications.html">publication</a></p>
+        </article>
+
+        <article class="work-item">
+          <h3>Decision-support modeling for drought policy under sector interdependence</h3>
+          <p class="meta">GWU Systems Engineering, with Joost Santos &middot; 2022&ndash;2023</p>
+          <p>
+            Drought does not impact economic sectors in isolation: a shock to
+            agriculture propagates through processing, transport, and downstream
+            services in ways that linear damage estimates miss. The question we
+            took up was how to quantify those cascading losses across
+            California's 71 BEA sectors and evaluate which policy interventions
+            actually reduce them.
+          </p>
+          <p>
+            I co-led the development of the California Drought Impact Assessment
+            Tool (CDIAT), a dynamic inoperability input-output (DIIM) framework
+            parameterized through expert elicitation from 32 subject-matter
+            experts on sector-level disruption, recovery periods, and policy
+            effectiveness. Sensitivity analyses were conducted across three mitigation
+            strategies: conservation, wastewater recycling, and
+            desalination over multi-year recovery horizons; conservation
+            reduced projected statewide losses by an estimated 61% (~$5.36B
+            avoided) relative to the no-action baseline. These results were validated against
+            documented losses from five historical California droughts spanning
+            1977&ndash;2022.
+          </p>
+          <p class="work-links"><a href="publications.html">publication</a></p>
+        </article>
+
+        <h2 class="section-heading">Ongoing research</h2>
+
+        <article class="work-item">
+          <h3>Probabilistic forecasting and prediction market calibration</h3>
           <p class="meta">Independent research &middot; Jan 2026&ndash;present</p>
           <p>
             Investigating whether temperature prediction markets are well-calibrated
-            relative to numerical weather prediction (NWP) ensembles. Across 
+            relative to numerical weather prediction (NWP) ensembles. Across
             historical observations, market-implied uncertainty exceeds realized
             uncertainty by a factor of 1.27, suggesting systematic local mispricing
             exploitable through selective trading.
           </p>
           <p>
             Built a probabilistic forecast-error model with Student-t residual
-            distributions and multi-source NWP features (HRRR, WeatherNext 2, 
+            distributions and multi-source NWP features (HRRR, WeatherNext 2,
             and others) across 20 cities. Validated selective forecasting
             edge via PIT calibration (KS=0.033) and Diebold-Mariano tests against
             market-implied distributions (p=0.006) on traded contracts. Out-of-sample
-            backtesting across 10 cities over 14 months produced 4.9 Sharpe and 5.6%
-            maximum drawdown, with Monte Carlo robustness checks (25K paths)
-            confirming 99.1% path profitability.
+            backtesting across 10 cities over 14 months produced a Sharpe ratio
+            of 4.9 and 5.6% maximum drawdown, with Monte Carlo robustness checks
+            (25K paths) confirming 99.1% path profitability.
           </p>
           <p>
             Trading system deployed live on a VPS with automated daily execution; ongoing
@@ -81,13 +136,31 @@
         </article>
 
         <article class="work-item">
-          <h3>Volatility forecasting for delta-neutral options strategies</h3>
+          <h3>Volatility forecasting and the statistical&ndash;economic significance gap</h3>
           <p class="meta">Independent research &middot; 2025</p>
           <p>
-            Built a volatility forecasting framework comparing XGBoost against GARCH(1,1) and historical baselines on five
-            years of SPY data; Diebold-Mariano confirmed XGBoost outperforming GARCH (p=0.004) with 21% lower RMSE.
-            Implemented a delta-neutral options backtester with Black-Scholes pricing, daily delta rebalancing, and
-            regime-conditional variance risk premium estimation.
+            A common assumption in applied volatility modeling is that more
+            sophisticated forecasts should translate to better trading
+            performance. I tested this directly: does XGBoost-based volatility
+            forecasting produce measurable edge in a delta-neutral SPY options
+            strategy relative to GARCH(1,1) and a naive 30-day rolling
+            estimate?
+          </p>
+          <p>
+            I built a full backtesting framework on five years of SPY options
+            data (2020&ndash;2025) with Black-Scholes pricing, regime-conditional
+            variance risk premium estimation, mispricing detection, and daily
+            delta rebalancing. Diebold-Mariano tests on QLIKE loss showed
+            XGBoost significantly outperformed GARCH (p=0.004) with 21% lower
+            RMSE, but neither model significantly beat the naive historical
+            baseline (p=0.26). Despite the absence of statistical significance
+            in forecasting accuracy, XGBoost generated $1.1M in option-only
+            P&amp;L across the backtest; nearly all of which was offset by
+            hedge losses in a strongly trending market, leaving a modest +2.4%
+            annualized return. The result isolates a real but underappreciated
+            mechanism: forecasting accuracy can translate to better option
+            selection without translating to strategy P&amp;L, when hedging
+            methodology dominates the path from signal to return.
           </p>
           <p class="work-links"><a href="https://github.com/Oalkhadra/volatility-forecasting">code</a></p>
         </article>
