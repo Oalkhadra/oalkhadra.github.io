@@ -8,7 +8,7 @@
   --link-hover: #2d3748;
   --sidebar-width: 280px;
   --content-max: 720px;
-  --font: 'Times New Roman', Times, serif;
+  --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
 *,
