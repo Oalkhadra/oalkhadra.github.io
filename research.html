@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Research — Omar Alkhadra</title>
+  <title>Research &ndash; Omar Alkhadra</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
@@ -74,7 +74,7 @@
             multi-stage KDE pipeline and Nishida's ILP formulation with
             spatiotemporal priors. I also built a fault-tolerant ETL pipeline
             processing 30M+ geospatial records to evaluate all methods on a
-            common footing.
+            common footing. Publication can be found <a href="publications.html">here</a>.
           </p>
           <p class="work-links"><a href="publications.html">publication</a></p>
         </article>
@@ -91,17 +91,17 @@
             actually reduce them.
           </p>
           <p>
-            I co-led the development of the California Drought Impact Assessment
+            Co-led the development of the California Drought Impact Assessment
             Tool (CDIAT), a dynamic inoperability input-output (DIIM) framework
             parameterized through expert elicitation from 32 subject-matter
             experts on sector-level disruption, recovery periods, and policy
-            effectiveness. Sensitivity analyses were conducted across three mitigation
-            strategies: conservation, wastewater recycling, and
-            desalination over multi-year recovery horizons; conservation
+            effectiveness. Ran sensitivity analysis across three mitigation
+            strategies (conservation, wastewater recycling, and desalination)
+            over multi-year recovery horizons; conservation
             reduced projected statewide losses by an estimated 61% (~$5.36B
-            avoided) relative to the no-action baseline. These results were validated against
+            avoided) relative to the no-action baseline. Validated against
             documented losses from five historical California droughts spanning
-            1977&ndash;2022.
+            1977&ndash;2022. Publication can be found <a href="publications.html">here</a>.
           </p>
           <p class="work-links"><a href="publications.html">publication</a></p>
         </article>
@@ -113,26 +113,31 @@
           <p class="meta">Independent research &middot; Jan 2026&ndash;present</p>
           <p>
             Investigating whether temperature prediction markets are well-calibrated
-            relative to numerical weather prediction (NWP) ensembles. Across
-            historical observations, market-implied uncertainty exceeds realized
-            uncertainty by a factor of 1.27, suggesting systematic local mispricing
-            exploitable through selective trading.
+            relative to numerical weather prediction (NWP) ensembles. Across 1,911
+            city-date observations, market-implied uncertainty exceeds realized
+            uncertainty by a factor of 1.27, evidence of a structural inefficiency
+            likely driven by retail-dominated order flow.
           </p>
           <p>
             Built a probabilistic forecast-error model with Student-t residual
             distributions and multi-source NWP features (HRRR, WeatherNext 2,
-            and others) across 20 cities. Validated selective forecasting
+            and others) across 10 U.S. cities. Validated selective forecasting
             edge via PIT calibration (KS=0.033) and Diebold-Mariano tests against
-            market-implied distributions (p=0.006) on traded contracts. Out-of-sample
-            backtesting across 10 cities over 14 months produced a Sharpe ratio
-            of 4.9 and 5.6% maximum drawdown, with Monte Carlo robustness checks
-            (25K paths) confirming 99.1% path profitability.
+            market-implied distributions (p=0.006) on traded contracts.
+            Out-of-sample backtesting from January 2025 to February 2026 produced
+            an annualized Sharpe of 4.9, 49.8% total return, and 5.6% maximum
+            drawdown across 1,012 trades. Monte Carlo simulation under conservative
+            edge-decay assumptions (25K paths) produced 95.1% path profitability
+            with a median annualized Sharpe of 2.26. A sweep of 66 parameter
+            configurations was uniformly profitable, with the chosen parameters
+            sitting in the interior of the profitable region rather than on
+            a boundary.
           </p>
           <p>
             Trading system deployed live on a VPS with automated daily execution; ongoing
             out-of-sample calibration tracking against new contracts.
           </p>
-          <p class="work-links"><a href="mailto:omar.alkhadra@outlook.com">code available on request</a></p>
+          <p class="work-links"><a href="https://github.com/Oalkhadra/prediction-market-trading">code</a></p>
         </article>
 
         <article class="work-item">
@@ -147,7 +152,7 @@
             estimate?
           </p>
           <p>
-            I built a full backtesting framework on five years of SPY options
+            Built a full backtesting framework on five years of SPY options
             data (2020&ndash;2025) with Black-Scholes pricing, regime-conditional
             variance risk premium estimation, mispricing detection, and daily
             delta rebalancing. Diebold-Mariano tests on QLIKE loss showed
