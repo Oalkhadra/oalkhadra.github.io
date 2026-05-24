@@ -73,6 +73,17 @@ img {
   flex-direction: column;
 }
 
+/* Inner pages: no sidebar; center nav + main as one column */
+.layout--inner {
+  justify-content: center;
+}
+
+.layout--inner .content-column {
+  flex: none;
+  width: 100%;
+  max-width: var(--content-max);
+}
+
 .top-nav {
   display: flex;
   flex-wrap: wrap;
