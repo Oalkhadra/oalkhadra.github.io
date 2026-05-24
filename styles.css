@@ -8,8 +8,7 @@
   --link-hover: #2d3748;
   --sidebar-width: 280px;
   --content-max: 720px;
-  --serif: 'Source Serif 4', Charter, Georgia, serif;
-  --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font: 'Times New Roman', Times, serif;
 }
 
 *,
@@ -25,7 +24,7 @@ html {
 }
 
 body {
-  font-family: var(--sans);
+  font-family: var(--font);
   color: var(--text);
   background: var(--bg);
   line-height: 1.65;
@@ -118,7 +117,6 @@ img {
 }
 
 .site-name {
-  font-family: var(--serif);
   font-weight: 600;
   font-size: 1.5rem;
   line-height: 1.2;
@@ -167,7 +165,6 @@ img {
 
 /* ---------- Page typography ---------- */
 .page-title {
-  font-family: var(--serif);
   font-weight: 600;
   font-size: 1.75rem;
   margin-bottom: 1.5rem;
@@ -183,7 +180,6 @@ section:first-child {
 }
 
 h2 {
-  font-family: var(--serif);
   font-weight: 600;
   font-size: 1.2rem;
   margin-bottom: 0.85rem;
@@ -222,7 +218,6 @@ p:last-child {
 }
 
 em {
-  font-family: var(--serif);
   font-style: italic;
 }
 
@@ -243,7 +238,6 @@ strong {
 
 .pub-venue {
   font-style: italic;
-  font-family: var(--serif);
 }
 
 .pub-links {
@@ -273,7 +267,6 @@ strong {
 }
 
 .work-item h3 {
-  font-family: var(--serif);
   font-weight: 600;
   font-size: 1.1rem;
   margin-bottom: 0.35rem;
