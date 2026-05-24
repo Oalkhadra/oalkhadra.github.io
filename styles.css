@@ -315,37 +315,48 @@ strong {
   color: var(--text-faint);
 }
 
-/* ---------- Education compact list ---------- */
-.compact-list {
+/* ---------- Education ---------- */
+.education-list {
   list-style: none;
 }
 
-.compact-item {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 1rem;
-  padding: 0.65rem 0;
-  border-bottom: 1px dotted var(--rule);
-  align-items: baseline;
+.education-item {
+  padding: 1.1rem 0;
+  border-bottom: 1px solid var(--rule);
 }
 
-.compact-item:last-child {
+.education-item:first-child {
+  padding-top: 0;
+}
+
+.education-item:last-child {
   border-bottom: none;
+  padding-bottom: 0;
 }
 
-.compact-item .role {
+.education-degree {
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.45;
+  margin-bottom: 0.2rem;
+}
+
+.education-school {
   font-size: 0.98rem;
-}
-
-.compact-item .role .org {
   color: var(--text-muted);
+  line-height: 1.45;
+  margin-bottom: 0.15rem;
 }
 
-.compact-item .date {
-  font-size: 0.85rem;
+.education-meta {
+  font-size: 0.9rem;
   color: var(--text-faint);
+  line-height: 1.45;
+  margin-bottom: 0;
+}
+
+.education-meta time {
   font-variant-numeric: tabular-nums;
-  white-space: nowrap;
 }
 
 /* ---------- Collapsed other projects ---------- */
@@ -429,12 +440,4 @@ strong {
     padding: 1.5rem 1.25rem 3rem;
   }
 
-  .compact-item {
-    grid-template-columns: 1fr;
-    gap: 0.2rem;
-  }
-
-  .compact-item .date {
-    font-size: 0.82rem;
-  }
 }
