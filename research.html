@@ -110,32 +110,41 @@
 
         <article class="work-item">
           <h3>Probabilistic forecasting and prediction market calibration</h3>
-          <p class="meta">Ongoing</p>
+          <p class="meta">Ongoing &middot; trading live since February 2026 &middot; working paper in preparation</p>
           <p>
-            Investigating whether temperature prediction markets are well-calibrated
-            relative to numerical weather prediction (NWP) ensembles. Across 1,911
-            city-date observations, market-implied uncertainty exceeds realized
-            uncertainty by a factor of 1.27, evidence of a structural inefficiency
-            likely driven by retail-dominated order flow.
+            Retail temperature prediction markets systematically over-price
+            forecast uncertainty: market-implied dispersion exceeded realized
+            dispersion by roughly 1.27&times. That mispricing makes dispersion calibration
+            the economically live quantity, and it motivates the system I built
+            and operate: a pooled XGBoost forecast-error model spanning 20 U.S.
+            cities and multiple NWP sources, with Student-t predictive
+            distributions, retrained daily and trading Kalshi temperature
+            contracts autonomously since February 2026.
           </p>
           <p>
-            Built a probabilistic forecast-error model with Student-t residual
-            distributions and multi-source NWP features (HRRR, WeatherNext 2,
-            and others) across 10 U.S. cities. Validated selective forecasting
-            edge via PIT calibration (KS=0.033) and Diebold-Mariano tests against
-            market-implied distributions (p=0.006) on traded contracts.
-            Out-of-sample backtesting from January 2025 to February 2026 produced
-            an annualized Sharpe of 4.9, 49.8% total return, and 5.6% maximum
-            drawdown across 1,012 trades. Monte Carlo simulation under conservative
-            edge-decay assumptions (25K paths) produced 95.1% path profitability
-            with a median annualized Sharpe of 2.26. A sweep of 66 parameter
-            configurations was uniformly profitable, with the chosen parameters
-            sitting in the interior of the profitable region rather than on
-            a boundary.
+            The central research finding came out of the system's own
+            diagnostics. The forecaster's pooled PIT histogram was statistically
+            uniform, yet conditioning on an observable covariate &mdash; the
+            weather-ensemble spread &mdash; revealed predictive dispersion
+            mis-scaled by 25&ndash;40% across regimes: the pooled statistic was
+            uniform only by cancellation. I documented three distinct mechanisms
+            by which pooled calibration metrics mask conditional miscalibration,
+            and deployed a one-line ensemble-conditional variance scaling that
+            corrects it in every regime under walk-forward evaluation and holds
+            live. The decision layer applies distributionally robust trade
+            selection and Kelly sizing (Lam 2016), with the ambiguity radius set
+            from the forecaster's own calibration diagnostics.
           </p>
           <p>
-            Trading system deployed live on a VPS with automated daily execution; ongoing
-            out-of-sample calibration tracking against new contracts.
+            Live results, measured on the system's own telemetry and frozen as
+            of July 2026: across 10,757 market-bucket observations, the model's
+            probabilities beat market-implied prices with a 10.3% Brier skill
+            score and 12&times; lower expected calibration error (0.006 vs.
+            0.072). Across 1,000+ settled contracts, lifetime Sharpe of 2.0
+            (annualized from daily returns on deployed capital) and +37.4%
+            return on risk under the current model, net of fees. These markets
+            are thin, so the system is judged on calibration and process
+            quality rather than absolute P&amp;L.
           </p>
           <p class="work-links"><a href="https://github.com/Oalkhadra/prediction-market-trading">code</a></p>
         </article>
