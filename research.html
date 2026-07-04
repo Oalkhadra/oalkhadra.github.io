@@ -114,7 +114,7 @@
           <p>
             Retail temperature prediction markets systematically over-price
             forecast uncertainty: market-implied dispersion exceeded realized
-            dispersion by roughly 1.27&times. That mispricing makes dispersion calibration
+            dispersion by roughly 1.27&times;. That mispricing makes dispersion calibration
             the economically live quantity, and it motivates the system I built
             and operate: a pooled XGBoost forecast-error model spanning 20 U.S.
             cities and multiple NWP sources, with Student-t predictive
@@ -128,7 +128,7 @@
             mis-scaled by 25&ndash;40% across regimes: the pooled statistic was
             uniform only by cancellation. I documented three distinct mechanisms
             by which pooled calibration metrics mask conditional miscalibration,
-            and deployed a one-line ensemble-conditional variance scaling that
+            and deployed a one-line covariate-conditional variance scaling that
             corrects it in every regime under walk-forward evaluation and holds
             live. The decision layer applies distributionally robust trade
             selection and Kelly sizing (Lam 2016), with the ambiguity radius set
