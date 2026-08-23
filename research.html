@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Omar Alkhadra: Research</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="layout">
+
+    <aside class="sidebar">
+      <figure class="headshot">
+        <img src="assets/headshot.jpg" alt="Omar Alkhadra" width="140" height="140">
+      </figure>
+      <p class="site-name">Omar Alkhadra</p>
+      <p class="affiliation">Applied Research Scientist @ GEICO AI</p>
+      <nav class="sidebar-links" aria-label="Contact and profiles">
+        <a href="mailto:omar.alkhadra@outlook.com">
+          <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          <span>Email</span>
+        </a>
+        <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&authuser=1&user=3Zb146EAAAAJ">
+          <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 4 3 6 3s6-1 6-3v-5"/></svg>
+          <span>Google Scholar</span>
+        </a>
+        <a href="https://www.linkedin.com/in/oalkhadra/">
+          <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-12h4v2"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          <span>LinkedIn</span>
+        </a>
+        <a href="https://github.com/oalkhadra">
+          <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5a10.3 10.3 0 0 0-5 0C6 5 5 5 5 5c-.3 1.15-.3 2.35 0 3.5A4.17 4.17 0 0 0 4 12c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65S8.5 20.5 9 22"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+          <span>GitHub</span>
+        </a>
+        <a href="assets/cv.pdf">
+          <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
+          <span>CV</span>
+        </a>
+      </nav>
+    </aside>
+
+    <div class="content-column">
+      <nav class="top-nav" aria-label="Site sections">
+        <a href="index.html">About</a>
+        <a href="publications.html">Publications</a>
+        <a href="experience.html">Experience</a>
+        <a href="research.html" aria-current="page">Research</a>
+      </nav>
+
+      <main class="page-main">
+        <h1 class="page-title">Research</h1>
+
+        <h2 class="section-heading">Published work</h2>
+
+        <article class="work-item">
+          <h3>Point-of-interest attribution under spatial and temporal uncertainty</h3>
+          <p class="meta">USC InfoLab, with Dr. Cyrus Shahabi et al. &middot; 2024&ndash;2025</p>
+          <p>
+            Attributing noisy GPS trajectories to candidate points of interest is
+            a problem of inference under both spatial and temporal uncertainty:
+            the device location is a distribution, the dwell window is fuzzy, and
+            the set of plausible venues overlaps. Prior work spans heuristic
+            nearest-centroid baselines, multi-stage kernel density methods, and
+            integer-programming formulations with spatiotemporal priors, but the
+            field lacked a reproducible comparison across these approaches.
+          </p>
+          <p>
+            My contribution was the benchmarking suite that made our transformer
+            framework's results interpretable. I reconstructed two proprietary
+            probabilistic baselines from limited documentation: SafeGraph's
+            multi-stage KDE pipeline and Nishida's ILP formulation with
+            spatiotemporal priors. I also built a fault-tolerant ETL pipeline
+            processing 30M+ geospatial records to evaluate all methods on a
+            common footing.
+          </p>
+          <p class="work-links"><a href="publications.html">Publication</a></p>
+        </article>
+
+        <article class="work-item">
+          <h3>Decision-support modeling for drought policy under sector interdependence</h3>
+          <p class="meta">GWU Systems Engineering, with Dr. Joost Santos et al. &middot; 2022&ndash;2023</p>
+          <p>
+            Drought does not impact economic sectors in isolation: a shock to
+            agriculture propagates through processing, transport, and downstream
+            services in ways that linear damage estimates miss. The question we
+            took up was how to quantify those cascading losses across
+            California's 71 BEA sectors and evaluate which policy interventions
+            actually reduce them.
+          </p>
+          <p>
+            Co-led the development of the California Drought Impact Assessment
+            Tool (CDIAT), a dynamic inoperability input-output (DIIM) framework
+            parameterized through expert elicitation from 32 subject-matter
+            experts on sector-level disruption, recovery periods, and policy
+            effectiveness. Ran sensitivity analysis across three mitigation
+            strategies (conservation, wastewater recycling, and desalination)
+            over multi-year recovery horizons; conservation
+            reduced projected statewide losses by an estimated 61% (~$5.36B
+            avoided) relative to the no-action baseline. Validated against
+            documented losses from five historical California droughts spanning
+            1977&ndash;2022.
+          </p>
+          <p class="work-links"><a href="publications.html">Publication</a></p>
+        </article>
+
+        <h2 class="section-heading">Independent research</h2>
+
+        <article class="work-item">
+          <h3>Conditional calibration in probabilistic forecasting</h3>
+          <p class="meta">2026</p>
+          <p>
+            A probabilistic forecasting system for weather prediction markets, 
+            deployed against real capital so that every forecast is scored by 
+            settlement rather than by a held-out split.
+          </p>
+          
+          <p>    
+            Across roughly 9,000 scored markets, the predictive distribution's Probability Integral Transform (PIT) 
+            is indistinguishable from uniform (KS 0.027, p = 0.22), with central 50% and 90% 
+            coverage at 48% and 89%, respectively. Against market-implied probabilities 
+            over the same window, Brier skill is +1.2% and expected calibration error is 0.010 
+            against the market's 0.030.
+          </p>
+
+          <p>
+            The research question stems from the system's own diagnostics: 
+            pooled calibration statistics can be uniform while conditional 
+            dispersion is badly mis-scaled, uniform only by cancellation across regimes.
+          </p>
+          
+          <p class="work-note"><em>Figures as of August 2026. Method and performance detail withheld while the strategy is live; happy to discuss the research directly.</em></p>
+        </article>
+
+        <article class="work-item">
+          <h3>Volatility forecasting and the statistical&ndash;economic significance gap</h3>
+          <p class="meta">2025</p>
+          <p>
+            A common assumption in applied volatility modeling is that more
+            sophisticated forecasts should translate to better trading
+            performance. I tested this directly: does XGBoost-based volatility
+            forecasting produce measurable edge in a delta-neutral SPY options
+            strategy relative to GARCH(1,1) and a naive 30-day rolling
+            estimate?
+          </p>
+          <p>
+            I built a backtesting framework over five years of SPY options data (2020 to 2025)
+            with Black-Scholes pricing, regime-conditional variance risk premium estimation, 
+            mispricing detection, and daily delta rebalancing. Diebold-Mariano tests on QLIKE 
+            loss show XGBoost beating GARCH (p = 0.004, 21% lower RMSE), but neither model 
+            beats the naive historical baseline (p = 0.26). The trading result separates cleanly 
+            from the forecasting result: option selection improved, and nearly all of the gross 
+            option P&amp;L was consumed by hedge losses in a strongly trending market.
+          </p>
+          <p class="work-links"><a href="https://github.com/oalkhadra/volatility-forecasting">code</a></p>
+        </article>
+
+      </main>
+    </div>
+
+  </div>
+</body>
+</html>

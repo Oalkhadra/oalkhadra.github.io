@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Omar Alkhadra: About</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="layout">
+
+    <aside class="sidebar">
+      <figure class="headshot">
+        <img src="assets/headshot.jpg" alt="Omar Alkhadra" width="140" height="140">
+      </figure>
+      <p class="site-name">Omar Alkhadra</p>
+      <p class="affiliation">Applied Research Scientist @ GEICO AI</p>
+      <nav class="sidebar-links" aria-label="Contact and profiles">
+        <a href="mailto:omar.alkhadra@outlook.com">
+          <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          <span>Email</span>
+        </a>
+        <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&authuser=1&user=3Zb146EAAAAJ">
+          <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 4 3 6 3s6-1 6-3v-5"/></svg>
+          <span>Google Scholar</span>
+        </a>
+        <a href="https://www.linkedin.com/in/oalkhadra/">
+          <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-12h4v2"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          <span>LinkedIn</span>
+        </a>
+        <a href="https://github.com/oalkhadra">
+          <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5a10.3 10.3 0 0 0-5 0C6 5 5 5 5 5c-.3 1.15-.3 2.35 0 3.5A4.17 4.17 0 0 0 4 12c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65S8.5 20.5 9 22"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+          <span>GitHub</span>
+        </a>
+        <a href="assets/cv.pdf">
+          <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
+          <span>CV</span>
+        </a>
+      </nav>
+    </aside>
+
+    <div class="content-column">
+      <nav class="top-nav" aria-label="Site sections">
+        <a href="index.html" aria-current="page">About</a>
+        <a href="publications.html">Publications</a>
+        <a href="experience.html">Experience</a>
+        <a href="research.html">Research</a>
+      </nav>
+
+      <main class="page-main">
+        <h1 class="page-title">About</h1>
+
+        <section class="prose">
+          <p>
+            I am an Applied Research Scientist at GEICO AI. I earned an M.S. in Applied Data Science 
+            from the University of Southern California and a B.S. in Systems Engineering from George Washington 
+            University with a Minor in Statistics.
+          </p>
+          <p>
+            I build forecasting systems that are scored by outcomes rather than by held-out splits, 
+            and I am interested in what that scoring reveals. Recent work spans auto insurance pricing, 
+            probabilistic weather forecasting for prediction market trading, and point-of-interest attribution 
+            from noisy GPS.
+          </p>
+        </section>
+        
+        <section class="prose" aria-labelledby="interests-heading">
+          <h2 id="interests-heading">Research Interests</h2>
+          <p>
+            Prices encode beliefs, outcomes are observable, and miscalibration has a cost. 
+            That combination is why I work on probabilistic forecasting in markets: 
+            it is one of the few settings where a forecaster is graded continuously and 
+            cannot argue with the grade.
+          </p>
+          
+          <p>
+            The question I keep returning to is what calibration should mean for a 
+            forecast that will be acted on. Standard diagnostics are marginal, and a 
+            model can pass all of them while being badly miscalibrated in exactly the 
+            regimes where a decision rule takes its largest positions. I am interested 
+            in conditional calibration criteria, in what a recalibration step should target 
+            when different targets fix different diagnostics, and in what any of this implies 
+            for sequential decision-making under a model you know to be wrong.
+          </p>
+        </section>
+
+        <section aria-labelledby="education-heading">
+          <h2 id="education-heading">Education</h2>
+          <ul class="education-list">
+            <li class="education-item">
+              <p class="education-degree">Master of Science in Applied Data Science</p>
+              <p class="education-school">University of Southern California</p>
+              <p class="education-meta"><time datetime="2023">2023 &ndash; 2025</time> &middot; GPA 4.0</p>
+            </li>
+            <li class="education-item">
+              <p class="education-degree">Bachelor of Science in Systems Engineering, Minor in Statistics</p>
+              <p class="education-school">George Washington University</p>
+              <p class="education-meta"><time datetime="2019">2019 &ndash; 2023</time> </p>
+            </li>
+          </ul>
+        </section>
+      </main>
+    </div>
+  </div>
+</body>
+</html>
