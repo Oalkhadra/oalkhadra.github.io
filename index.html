@@ -60,9 +60,9 @@
             University with a Minor in Statistics.
           </p>
           <p>
-            I build forecasting systems that are scored by outcomes rather than by held-out splits, 
-            and I am interested in what that scoring reveals. Recent work spans auto insurance pricing, 
-            probabilistic weather forecasting for prediction market trading, and point-of-interest attribution 
+            The through line of my work is probabilistic forecasting: putting distributions
+            on what happens next. Recent applicarions span auto insurance pricing, probabilistic 
+            weather forecasting for prediction market trading, and point-of-interest attribution 
             from noisy GPS.
           </p>
         </section>
@@ -70,19 +70,21 @@
         <section class="prose" aria-labelledby="interests-heading">
           <h2 id="interests-heading">Research Interests</h2>
           <p>
-            Prices encode beliefs, outcomes are observable, and miscalibration has a cost. 
-            That combination is why I work on probabilistic forecasting in markets: 
-            it is one of the few settings where a forecaster is graded continuously and 
-            cannot argue with the grade.
+            Nothing about the future is certain. What will the S&amp;P be valued at next week?
+            How many car accidents will there be in the summer? Will it rain tomorrow?
+            Nearly every question worth asking resolves to a single outcome eventually.
+            Until it does, the honest answer is not a number but a distribution, a weight
+            between 0 and 1 on everything that could happen. So I find the useful entity
+            is the overarching distribution, not the point prediction, and the question
+            that matters is whether that distribution is well-calibrated.
           </p>
           <p>
-            The question I keep returning to is what calibration should mean for a 
-            forecast that will be acted on. Standard diagnostics are marginal, and a 
-            model can pass all of them while being badly miscalibrated in exactly the 
-            regimes where a decision rule takes its largest positions. I am interested 
-            in conditional calibration criteria, in what a recalibration step should target 
-            when different targets fix different diagnostics, and in what any of this implies 
-            for sequential decision-making under a model you know to be wrong.
+            My research interests follow from that view. Nature is riddled with asymmetry,
+            tail events, and distributions no one hands you, so I work on probabilistic
+            forecasting in settings where Gaussian assumptions fail and forecasts are
+            settled against realized outcomes. My current applications are auto insurance
+            and weather prediction markets: one governed by human nature, the other by
+            nature itself, and in both a miscalibrated belief is one you pay for.
           </p>
         </section>
 
