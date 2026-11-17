@@ -112,23 +112,27 @@
           <h3>Conditional calibration in probabilistic forecasting</h3>
           <p class="meta">2026</p>
           <p>
-            A probabilistic forecasting system for weather prediction markets, 
-            deployed against real capital so that every forecast is scored by 
+            A probabilistic forecasting system for weather prediction markets,
+            deployed against real capital so that every forecast is scored by
             settlement rather than by a held-out split.
           </p>
           <p>
-            Across roughly 9,000 scored markets, the predictive distribution's Probability Integral Transform (PIT) 
-            is indistinguishable from uniform (KS 0.027, p = 0.22), with central 50% and 90% 
-            coverage at 48% and 89%, respectively. Against market-implied probabilities 
-            over the same window, Brier skill is +1.2% and expected calibration error is 0.010 
-            against the market's 0.030.
+            Across 3,260 city-days, the predictive distribution's Probability Integral Transform (PIT)
+            is indistinguishable from uniform (KS 0.013, p = 0.64), with central 50% and 90%
+            coverage at 50% and 89%, respectively. Against market-implied probabilities
+            on the same 19,560 quoted contracts, the forecasts are level with the market: Brier skill
+            is &minus;1.2% (95% CI &minus;2.8% to +0.4%) and expected calibration error is 0.009 for both.
+            The contracts the system chose to trade settled in its favor 10 points more often than
+            the prices paid implied (95% CI 8 to 13 points).
           </p>
           <p>
-            The research question stems from the system's own diagnostics: 
-            pooled calibration statistics can be uniform while conditional 
+            The research question stems from the system's own diagnostics:
+            pooled calibration statistics can be uniform while conditional
             dispersion is badly mis-scaled, uniform only by cancellation across regimes.
+            Coverage now holds conditionally as well: within each tercile of predicted spread,
+            the 90% interval covers about 89% of outcomes.
           </p>
-          <p class="work-note"><em>Figures as of August 2026. Method and performance detail withheld while the strategy is live; happy to discuss the research directly.</em></p>
+          <p class="work-note"><em>Figures cover the current model, June 5 to November 16, 2026. Method and performance detail withheld while the strategy is live; happy to discuss the research directly.</em></p>
         </article>
 
         <article class="work-item">
@@ -144,11 +148,11 @@
           </p>
           <p>
             I built a backtesting framework over five years of SPY options data (2020 to 2025)
-            with Black-Scholes pricing, regime-conditional variance risk premium estimation, 
-            mispricing detection, and daily delta rebalancing. Diebold-Mariano tests on QLIKE 
-            loss show XGBoost beating GARCH (p = 0.004, 21% lower RMSE), but neither model 
-            beats the naive historical baseline (p = 0.26). The trading result separates cleanly 
-            from the forecasting result: option selection improved, and nearly all of the gross 
+            with Black-Scholes pricing, regime-conditional variance risk premium estimation,
+            mispricing detection, and daily delta rebalancing. Diebold-Mariano tests on QLIKE
+            loss show XGBoost beating GARCH (p = 0.004, 21% lower RMSE), but neither model
+            beats the naive historical baseline (p = 0.26). The trading result separates cleanly
+            from the forecasting result: option selection improved, and nearly all of the gross
             option P&amp;L was consumed by hedge losses in a strongly trending market.
           </p>
           <p class="work-links"><a href="https://github.com/oalkhadra/volatility-forecasting">code</a></p>
